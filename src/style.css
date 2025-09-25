@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+    --default-font-family: 'IBM Plex Sans Arabic'
+}
+
+.panel {
+    @apply m-1 p-1 border-4 border-amber-300 bg-amber-100 rounded-2xl
+}
