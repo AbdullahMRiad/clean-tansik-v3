@@ -1,14 +1,17 @@
-type College = {
-    name: string,
-    score: number,
-    major: string,
-    type: "uni" | "high-inst" | "aff" | "unknown"
+export type CollegeKind = "university" | "institute" | "affiliated" | "unknown"
+
+export type College = {
+    name: string
+    score: number
+    major: string
+    kind: CollegeKind
 }
 
-type Year = {
-    colleges: College[],
-    year: number,
-    gender: "boys" | "grils"
+export type Gender = "boys" | "girls"
+
+export type YearSelection = {
+    year: number
+    gender: Gender
 }
 
-type Data = Year[]
+export type Dataset = College[]
