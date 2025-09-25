@@ -11,7 +11,11 @@ function DataSelector() {
                     <input type="radio" id="girls" name="gender" value="girls" className="hidden"/>
                 </label>
             </div>
-            <div id="year-selector"></div>
+            <div id="year-selector" className="flex justify-center">
+                <button className="button h-8 w-8">+</button>
+                <span className="h-min self-center mx-8">2025</span>
+                <button className="button h-8 w-8">-</button>
+            </div>
         </div>
     )
 }
