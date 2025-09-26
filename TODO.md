@@ -1,4 +1,4 @@
-- [ ] Add search by name and limit
+- [x] Add search by name and limit
 - [ ] Add tags section
 - [ ] Add stats section
 - [ ] Add college display cards
