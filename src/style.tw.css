@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-    --default-font-family: 'IBM Plex Sans Arabic'
+    --default-font-family: 'IBM Plex Sans Arabic';
+    --breakpoint-xs: 33rem;
 }
 
 .panel {
