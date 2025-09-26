@@ -12,3 +12,5 @@ export type Year = {
 }
 
 export type Data = Year[]
+
+export type SearchType = "name" | "score"

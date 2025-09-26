@@ -1,6 +1,6 @@
-function NameSearch() {
+function NameSearch({hidden = false}:{hidden?:boolean}) {
     return(
-        <div id="score-search" className="m-1 p-1 flex flex-col">
+        <div id="score-search" className={"m-1 p-1 flex flex-col" + (hidden?" hidden":"")}>
             <div id="inputs-container" className="w-full">
                 <div className="m-1">
                     <label htmlFor="college-name" className="text-center">

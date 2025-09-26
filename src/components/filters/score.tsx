@@ -1,4 +1,4 @@
-function ScoreSearch() {
+function ScoreSearch({hidden = false}:{hidden?:boolean}) {
 
     const message = `يتم حساب الدرجة عن طريق هذه المعادلة:
 
@@ -6,7 +6,7 @@ function ScoreSearch() {
 `
 
     return(
-        <div id="score-search" className="m-1 p-1 flex flex-col">
+        <div id="score-search" className={"m-1 p-1 flex flex-col" + (hidden?" hidden":"")}>
             <div id="inputs-container" className="flex flex-row w-full">
                 <div className="flex flex-col m-1 w-1/2 justify-center">
                     <label htmlFor="school-score" className="text-center">
