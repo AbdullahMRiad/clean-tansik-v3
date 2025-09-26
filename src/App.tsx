@@ -1,5 +1,6 @@
 import DataSelector from "./components/filters/dataselect"
 import FiltersSection from "./components/filters/filters"
+import TagsSection from "./components/filters/tags"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <header className="text-center text-3xl font-bold p-3! panel">تنسيق الجامعات المصرية للشهادة السعودية</header>
         <DataSelector/>
         <FiltersSection/>
+        <TagsSection/>
         <div id="cards-container"></div>
       </div>
     </>

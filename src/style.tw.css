@@ -25,3 +25,7 @@ input {
 ::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
+
+.checked-tag {
+    @apply font-bold bg-blue-400 text-white transition-all
+}
