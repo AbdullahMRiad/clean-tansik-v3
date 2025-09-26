@@ -1,3 +1,6 @@
+import NameSearch from "./name"
+import ScoreSearch from "./score"
+
 function FiltersSection() {
     return(
         <div id="filters-section" className="panel">
@@ -11,6 +14,8 @@ function FiltersSection() {
                     <input type="radio" id="name-search" name="search-type" value="name-search" className="hidden"/>
                 </label>
             </div>
+            <ScoreSearch/>
+            <NameSearch/>
         </div>
     )
 }
