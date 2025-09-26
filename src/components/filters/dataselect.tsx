@@ -2,12 +2,12 @@ function DataSelector() {
     return(
         <div id="dataselector-container" className="panel">
             <div id="gender-selector" className="w-full flex">
-                <label htmlFor="boys"  className="radio-selector">
-                    <span className="self-center">بنين</span>
+                <label htmlFor="boys"  className="radio-selector flex">
+                    <span className="self-center mx-auto">بنين</span>
                     <input type="radio" id="boys" name="gender" value="boys" className="hidden" defaultChecked/>
                 </label>
-                <label htmlFor="girls" className="radio-selector">
-                    <span className="self-center">بنات</span>
+                <label htmlFor="girls" className="radio-selector flex">
+                    <span className="self-center mx-auto">بنات</span>
                     <input type="radio" id="girls" name="gender" value="girls" className="hidden"/>
                 </label>
             </div>
