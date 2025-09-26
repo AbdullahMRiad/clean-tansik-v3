@@ -1,0 +1,9 @@
+- [ ] Add search by name and limit
+- [ ] Add tags section
+- [ ] Add stats section
+- [ ] Add college display cards
+- [ ] Add logic
+- [ ] Add desktop support
+- [ ] Add dark mode
+- [ ] Add about
+- [ ] Update README.md
