@@ -1,7 +1,7 @@
 - [x] Add search by name and limit
 - [x] Add tags section
-- [ ] Add stats section
-- [ ] Add college display cards
+- [x] Add stats section
+- [x] Add college display cards
 - [ ] Add logic
 - [ ] Add desktop support
 - [ ] Add dark mode
