@@ -9,7 +9,7 @@ export default function CardsContainer() {
                     <Card
                         name={v.الكلية}
                         limit={parseFloat(v.الدرجة)}
-                        icon={v.المجال}
+                        icon={v.الأيقونة}
                         quduratScore={
                             Math.ceil(parseFloat((((2 * parseFloat(v.الدرجة)) / 4.1) - 100).toFixed(6)))
                         }
@@ -34,7 +34,7 @@ function Card({
     }) {
     return(
         <div className="card panel">
-            <span><i className="[font-style:normal]">{icon}</i>{name}</span>
+            <span className="flex flex-row"><span className="material-symbols-outlined ml-2">{icon}</span><span>{name}</span></span>
             <div className="flex flex-row w-full" /* scores container */>
                 <div className="flex flex-col w-1/2 rounded-2xl bg-white m-1 p-1">
                     <span className="text-center">الحد الأدنى</span>
