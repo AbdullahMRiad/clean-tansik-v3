@@ -1,6 +1,7 @@
 import DataSelector from "./components/filters/dataselect"
 import FiltersSection from "./components/filters/filters"
 import TagsSection from "./components/filters/tags"
+import StatsSection from "./components/stats"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <DataSelector/>
         <FiltersSection/>
         <TagsSection/>
+        <StatsSection/>
         <div id="cards-container"></div>
       </div>
     </>
