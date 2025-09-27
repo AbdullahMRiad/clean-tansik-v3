@@ -21,7 +21,7 @@ function Tag({...props}) {
     const [checked, setChecked] = useState(false)
 
     return(
-        <button className={"button m-1 px-2" + (checked ? " checked-tag" : "")} onClick={()=>setChecked(!checked)}>
+        <button className={"button m-0.5 px-2" + (checked ? " checked-tag" : "")} onClick={()=>setChecked(!checked)}>
             {props.children}
         </button>
     )
