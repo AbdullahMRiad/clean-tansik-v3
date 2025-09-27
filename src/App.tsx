@@ -1,3 +1,4 @@
+import CardsContainer from "./components/cards"
 import DataSelector from "./components/filters/dataselect"
 import FiltersSection from "./components/filters/filters"
 import TagsSection from "./components/filters/tags"
@@ -12,7 +13,7 @@ function App() {
         <FiltersSection/>
         <TagsSection/>
         <StatsSection/>
-        <div id="cards-container"></div>
+        <CardsContainer/>
       </div>
     </>
   )
