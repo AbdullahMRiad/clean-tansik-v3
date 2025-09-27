@@ -125,7 +125,56 @@ def classify_major(name):
 df['النوع'] = df['الكلية'].apply(classify_type)
 df['المجال'] = df['الكلية'].apply(classify_major)
 
-out_df = df[['الكلية', 'الدرجة', 'النوع', 'المجال']]
+# Icon mapping for each major field
+icon_map = {
+    'طب': 'ecg',
+    'طب أسنان': 'dentistry',
+    'طب بيطري': 'pet_supplies',
+    'صيدلة': 'syringe',
+    'علاج طبيعي': 'accessibility_new',
+    'تمريض': 'admin_meds',
+    'هندسة': 'engineering',
+    'هندسة بترول': 'oil_barrel',
+    'تخطيط عمراني': 'location_city',
+    'الملاحة والفضاء': 'rocket_launch',
+    'تكنولوجيا': 'manufacturing',
+    'حاسبات ومعلومات': 'data_object',
+    'اقتصاد وعلوم سياسية': 'finance_mode',
+    'علوم سياسية': 'gavel',
+    'علوم بيئية': 'nature_people',
+    'علوم': 'science',
+    'رياضيات': 'calculate',
+    'إحصاء': 'bar_chart_4_bars',
+    'مالية ومحاسبة': 'payments',
+    'تجارة': 'store',
+    'إدارة أعمال': 'business_center',
+    'إدارة': 'manage_accounts',
+    'اقتصاد': 'query_stats',
+    'تسويق': 'campaign',
+    'إعلام': 'video_camera_front',
+    'ألسن': 'translate',
+    'آداب': 'book_2',
+    'تربية': 'co_present',
+    'حقوق': 'balance',
+    'دراسات إسلامية': 'prayer_times',
+    'آثار': 'museum',
+    'سياحة وفنادق': 'hotel',
+    'فنون تطبيقية': 'brush',
+    'فنون جميلة': 'palette',
+    'فنون مسرحية': 'theater_comedy',
+    'زراعة': 'agriculture',
+    'خدمة اجتماعية': 'volunteer_activism',
+    'صناعة': 'factory',
+    'الإعاقة والتأهيل': 'accessible_forward',
+    'غير مصنف': 'block'
+}
+
+def get_icon(major):
+    return icon_map.get(major, 'block')
+
+df['الأيقونة'] = df['المجال'].apply(get_icon)
+
+out_df = df[['الكلية', 'الدرجة', 'النوع', 'المجال', 'الأيقونة']]
 
 try:
     out_df.to_csv(args.output_csv, index=False, encoding='utf-8')
