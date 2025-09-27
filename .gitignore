@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Procedurally tagged and converted data files
+data/json/*
+data/tagged/*
