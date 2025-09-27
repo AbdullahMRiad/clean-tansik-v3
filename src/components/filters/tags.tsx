@@ -8,8 +8,8 @@ function TagsSection() {
         <div id="tags-section" className="panel">
             <div className="inline">
                 {testArr.map(
-                    (v) => (
-                        <Tag>{v}</Tag>
+                    (v,i) => (
+                        <Tag key={i}>{v}</Tag>
                     )
                 )}
             </div>
