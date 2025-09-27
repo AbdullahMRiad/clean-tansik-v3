@@ -9,6 +9,9 @@ $files = (Get-ChildItem -Path "$workdir\raw").Name
 $total = $files.Count
 $index = 0
 
+if((Test-Path -Path "$workdir\tagged") -ne $true) {mkdir tagged}
+if((Test-Path -Path "$workdir\json") -ne $true) {mkdir json}
+
 foreach ($file in $files) {
     $index++
     Write-Progress -Activity "Categorizing CSV files" -Status "Processing $file ($index/$total)" -PercentComplete (($index / $total) * 100) -Id 1
