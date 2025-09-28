@@ -2,7 +2,11 @@
 - [x] Add tags section
 - [x] Add stats section
 - [x] Add college display cards
-- [ ] Add logic
+- [x] Add data selection
+- [ ] Add filtering by school and qudurat scores
+- [ ] Add filtering by college name and limit
+- [ ] Add filtering by tags
+- [ ] Add theme switching
 - [ ] Add desktop support
 - [ ] Add dark mode
 - [ ] Add about
