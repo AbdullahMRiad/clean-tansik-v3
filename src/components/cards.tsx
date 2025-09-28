@@ -1,10 +1,13 @@
-import data from "../../data/json/2025b.json"
+import type { College } from "../../types/types"
+import defaultData from "../../data/json/2025b.json"
 
-export default function CardsContainer() {
+export default function CardsContainer({data}:{data?: College[]}) {
+    // Fix: Use defaultData if data is undefined
+    const colleges = data ?? (defaultData as College[]);
 
     return(
         <div id="cards-container" className="w-full grid grid-cols-1">
-            {data.map(
+            {colleges.map(
                 (v, i) => (
                     <Card
                         name={v.الكلية}
