@@ -22,7 +22,7 @@ function DataSelector() {
                     onClick={() => {
                         if (year < 2025) {
                             setYear(year + 1);
-                            setYearLabel(year + 1)
+                            setYearLabel(year)
                         }
                     }}
                 >+
@@ -33,7 +33,7 @@ function DataSelector() {
                     onClick={() => {
                         if (year > 2019) {
                             setYear(year - 1);
-                            setYearLabel(year - 1)
+                            setYearLabel(year)
                         }
                     }}
                 >-</button>
