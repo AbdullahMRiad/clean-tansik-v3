@@ -1,13 +1,13 @@
-import type { College } from "../../types/types"
-import defaultData from "../../data/json/2025b.json"
+import { useContext } from "react"
+import { AppContext } from "../App"
 
-export default function CardsContainer({data}:{data?: College[]}) {
-    // Fix: Use defaultData if data is undefined
-    const colleges = data ?? (defaultData as College[]);
-
+export default function CardsContainer() {
+    const ctx = useContext(AppContext)
+    if(!ctx) throw new Error("ContextError: Context passed to DataSelector is null");
+    const data = ctx.data
     return(
         <div id="cards-container" className="w-full grid grid-cols-1">
-            {colleges.map(
+            {data.map(
                 (v, i) => (
                     <Card
                         name={v.الكلية}
