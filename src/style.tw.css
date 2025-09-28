@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-    --default-font-family: 'IBM Plex Sans Arabic';
+    --default-font-family: "IBM Plex Sans Arabic";
     --breakpoint-xs: 33rem;
 }
 
 .panel {
-    @apply m-1 p-1 border-4 border-blue-400 bg-blue-100 rounded-2xl
+    @apply m-1 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1;
 }
 
 .button {
-    @apply rounded-2xl text-black text-center border-4 border-blue-400 bg-blue-100 hover:bg-blue-400 hover:text-white active:bg-blue-600 active:scale-95 transition-all
+    @apply rounded-2xl border-4 border-blue-400 bg-blue-100 text-center text-black transition-all hover:bg-blue-400 hover:text-white active:scale-95 active:bg-blue-600;
 }
 
 .radio-selector {
-    @apply m-1 p-1 h-12 w-2/5 rounded-2xl border-4 border-blue-400 bg-blue-100 hover:bg-blue-400 hover:text-white active:bg-blue-600 active:scale-95 has-checked:w-3/5 has-checked:font-bold has-checked:bg-blue-400 has-checked:text-white transition-all
+    @apply m-1 h-12 w-2/5 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 transition-all hover:bg-blue-400 hover:text-white active:scale-95 active:bg-blue-600 has-checked:w-3/5 has-checked:bg-blue-400 has-checked:font-bold has-checked:text-white;
 }
 
 input {
-    @apply rounded-2xl text-black focus-visible:border-4 border-blue-400 bg-white hover:border-0 transition-all outline-0 *:outline-0 px-1
+    @apply rounded-2xl border-blue-400 bg-white px-1 text-black outline-0 transition-all *:outline-0 hover:border-0 focus-visible:border-4;
 }
 
 ::-webkit-inner-spin-button,
@@ -27,5 +27,5 @@ input {
 }
 
 .checked-tag {
-    @apply font-bold bg-blue-400 text-white transition-all
+    @apply bg-blue-400 font-bold text-white transition-all;
 }
