@@ -1,16 +1,11 @@
 export type College = {
-    name: string,
-    score: number,
-    major: string,
-    type: "uni" | "high-inst" | "aff" | "unknown"
+    الكلية: string,
+    الدرجة: string,
+    المجال: string,
+    الأيقونة: string
+    النوع: "uni" | "high-inst" | "aff" | "unknown"
 }
-
-export type Year = {
-    colleges: College[],
-    year: number,
-    gender: "boys" | "grils"
-}
-
-export type Data = Year[]
 
 export type SearchType = "name" | "score"
+
+export type Gender = "boys" | "girls"
