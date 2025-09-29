@@ -22,65 +22,65 @@ function DataSelector() {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to DataSelector is null");
-    const { year, setYear, gender, setGender, setData } = ctx;
+    const { year, setYear, gender, setGender, setSourceData } = ctx;
 
     useEffect(() => {
         if (gender === "boys") {
             switch (year) {
                 case 2019:
-                    setData(_2019b as College[]);
+                    setSourceData(_2019b as College[]);
                     break;
                 case 2020:
-                    setData(_2020b as College[]);
+                    setSourceData(_2020b as College[]);
                     break;
                 case 2021:
-                    setData(_2021b as College[]);
+                    setSourceData(_2021b as College[]);
                     break;
                 case 2022:
-                    setData(_2022b as College[]);
+                    setSourceData(_2022b as College[]);
                     break;
                 case 2023:
-                    setData(_2023b as College[]);
+                    setSourceData(_2023b as College[]);
                     break;
                 case 2024:
-                    setData(_2024b as College[]);
+                    setSourceData(_2024b as College[]);
                     break;
                 case 2025:
-                    setData(_2025b as College[]);
+                    setSourceData(_2025b as College[]);
                     break;
                 default:
-                    setData([]);
+                    setSourceData([]);
                     break;
             }
         } else if (gender === "girls") {
             switch (year) {
                 case 2019:
-                    setData(_2019g as College[]);
+                    setSourceData(_2019g as College[]);
                     break;
                 case 2020:
-                    setData(_2020g as College[]);
+                    setSourceData(_2020g as College[]);
                     break;
                 case 2021:
-                    setData(_2021g as College[]);
+                    setSourceData(_2021g as College[]);
                     break;
                 case 2022:
-                    setData(_2022g as College[]);
+                    setSourceData(_2022g as College[]);
                     break;
                 case 2023:
-                    setData(_2023g as College[]);
+                    setSourceData(_2023g as College[]);
                     break;
                 case 2024:
-                    setData(_2024g as College[]);
+                    setSourceData(_2024g as College[]);
                     break;
                 case 2025:
-                    setData(_2025g as College[]);
+                    setSourceData(_2025g as College[]);
                     break;
                 default:
-                    setData([]);
+                    setSourceData([]);
                     break;
             }
         }
-    }, [year, gender, setData]);
+    }, [year, gender, setSourceData]);
 
     return (
         <div id="dataselector-container" className="panel">
