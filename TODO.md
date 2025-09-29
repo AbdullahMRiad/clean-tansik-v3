@@ -3,7 +3,7 @@
 - [x] Add stats section
 - [x] Add college display cards
 - [x] Add data selection
-- [ ] Add filtering by school and qudurat scores
+- [x] Add filtering by school and qudurat scores
 - [ ] Add filtering by college name and limit
 - [ ] Add filtering by tags
 - [ ] Add theme switching
