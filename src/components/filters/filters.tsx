@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../../App";
 import NameSearch from "./name";
 import ScoreSearch from "./score";
-import type { SearchType } from "../../../types/types";
 
 function FiltersSection() {
-    const [searchType, setSearchType] = useState("score" as SearchType);
+    const ctx = useContext(AppContext);
+    if (!ctx)
+        throw new Error(
+            "ContextError: Context passed to FiltersSection is null",
+        );
+    const { searchType, setSearchType } = ctx;
     return (
         <div id="filters-section" className="panel">
             <div id="searchtype-selector" className="flex w-full">

@@ -58,7 +58,25 @@ function App() {
                 }),
             );
         }
-    }, [schoolScore, quduratScore]);
+    }, [schoolScore, quduratScore, searchType]);
+    useEffect(() => {
+        console.log(filteredData);
+        if (searchType === "name") {
+            setFilteredData(
+                sourceData.filter((v) => {
+                    if (collegeName === "") {
+                        return parseFloat(v.الدرجة) <= limit;
+                    } else {
+                        return (
+                            v.الكلية.includes(collegeName) &&
+                            parseFloat(v.الدرجة) <= limit
+                        );
+                    }
+                }),
+            );
+        }
+    }, [collegeName, limit, searchType]);
+
     return (
         <AppContext.Provider
             value={{

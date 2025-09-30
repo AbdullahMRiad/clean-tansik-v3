@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { AppContext } from "../../App";
+
 function NameSearch({ hidden = false }: { hidden?: boolean }) {
+    const ctx = useContext(AppContext);
+    if (!ctx)
+        throw new Error("ContextError: Context passed to NameSearch is null");
+    const { setCollegeName, setLimit } = ctx;
     return (
         <div
             id="score-search"
@@ -13,6 +20,10 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
                         placeholder="اسم الكلية"
                         type="text"
                         className="h-12 w-full"
+                        onChange={(e) => {
+                            console.log(e.target.value);
+                            setCollegeName(e.target.value);
+                        }}
                     />
                 </div>
                 <div className="m-1">
@@ -27,6 +38,10 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
                         max="410"
                         step="0.000001"
                         className="h-12 w-full"
+                        onChange={(e) => {
+                            console.log(e.target.valueAsNumber);
+                            setLimit(e.target.valueAsNumber || 410);
+                        }}
                     />
                 </div>
             </div>
