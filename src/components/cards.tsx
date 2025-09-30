@@ -5,7 +5,7 @@ export default function CardsContainer() {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to DataSelector is null");
-    const data = ctx.filteredData;
+    const data = ctx.taggedData;
     return (
         <div id="cards-container" className="grid w-full grid-cols-1">
             {data.map((v, i) => (

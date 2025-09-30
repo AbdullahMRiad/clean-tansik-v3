@@ -20,6 +20,8 @@ export const AppContext = createContext<{
     setSourceData: React.Dispatch<React.SetStateAction<College[]>>;
     filteredData: College[];
     setFilteredData: React.Dispatch<React.SetStateAction<College[]>>;
+    taggedData: College[];
+    setTaggedData: React.Dispatch<React.SetStateAction<College[]>>;
     schoolScore: number;
     setSchoolScore: React.Dispatch<React.SetStateAction<number>>;
     quduratScore: number;
@@ -30,6 +32,10 @@ export const AppContext = createContext<{
     setLimit: React.Dispatch<React.SetStateAction<number>>;
     searchType: SearchType;
     setSearchType: React.Dispatch<React.SetStateAction<SearchType>>;
+    tags: string[];
+    setTags: React.Dispatch<React.SetStateAction<string[]>>;
+    types: string[];
+    setTypes: React.Dispatch<React.SetStateAction<string[]>>;
 }>(null!);
 
 function App() {
@@ -41,11 +47,16 @@ function App() {
     const [filteredData, setFilteredData] = useState<College[]>(
         _2025b as College[],
     );
+    const [taggedData, setTaggedData] = useState<College[]>(
+        _2025b as College[],
+    );
     const [schoolScore, setSchoolScore] = useState<number>(100);
     const [quduratScore, setQuduratScore] = useState<number>(100);
     const [collegeName, setCollegeName] = useState<string>("");
     const [limit, setLimit] = useState<number>(410);
     const [searchType, setSearchType] = useState<SearchType>("score");
+    const [tags, setTags] = useState<string[]>([]);
+    const [types, setTypes] = useState<string[]>([]);
 
     useEffect(() => {
         if (searchType === "score") {
@@ -60,7 +71,7 @@ function App() {
         }
     }, [schoolScore, quduratScore, searchType]);
     useEffect(() => {
-        console.log(filteredData);
+        // console.log(filteredData);
         if (searchType === "name") {
             setFilteredData(
                 sourceData.filter((v) => {
@@ -76,7 +87,37 @@ function App() {
             );
         }
     }, [collegeName, limit, searchType]);
-
+    useEffect(() => {
+        setTaggedData(
+            filteredData.filter((v) => {
+                console.log(
+                    tags +
+                        " includes " +
+                        v.المجال +
+                        "? " +
+                        tags.includes(v.المجال),
+                );
+                if (tags.length === 0) return true;
+                return tags.includes(v.المجال);
+            }),
+        );
+    }, [tags, filteredData]);
+    useEffect(() => {
+        console.log("effect thing");
+        setTaggedData(
+            filteredData.filter((v) => {
+                console.log(
+                    types +
+                        " includes " +
+                        v.النوع +
+                        "? " +
+                        types.includes(v.النوع),
+                );
+                if (types.length === 0) return true;
+                return types.includes(v.النوع);
+            }),
+        );
+    }, [types, filteredData]);
     return (
         <AppContext.Provider
             value={{
@@ -98,6 +139,12 @@ function App() {
                 setLimit,
                 searchType,
                 setSearchType,
+                tags,
+                setTags,
+                types,
+                setTypes,
+                taggedData,
+                setTaggedData,
             }}>
             <div className="flex w-full flex-col">
                 <header className="panel p-3! text-center text-3xl font-bold">
