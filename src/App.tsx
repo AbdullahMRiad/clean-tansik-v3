@@ -41,10 +41,10 @@ function App() {
     const [filteredData, setFilteredData] = useState<College[]>(
         _2025b as College[],
     );
-    const [schoolScore, setSchoolScore] = useState<number>(0);
-    const [quduratScore, setQuduratScore] = useState<number>(0);
+    const [schoolScore, setSchoolScore] = useState<number>(100);
+    const [quduratScore, setQuduratScore] = useState<number>(100);
     const [collegeName, setCollegeName] = useState<string>("");
-    const [limit, setLimit] = useState<number>(0);
+    const [limit, setLimit] = useState<number>(410);
     const [searchType, setSearchType] = useState<SearchType>("score");
 
     useEffect(() => {
