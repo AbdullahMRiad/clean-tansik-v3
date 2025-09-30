@@ -26,3 +26,4 @@ dist-ssr
 # Procedurally tagged and converted data files
 data/json/*
 data/tagged/*
+.vercel
