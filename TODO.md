@@ -8,6 +8,7 @@
 - [x] Add filtering by tags
 - [x] Add theme switching
 - [x] Add desktop support
+- [ ] Add functionality to stats section
 - [ ] Add dark mode
 - [ ] Add about
 - [ ] Update README.md
