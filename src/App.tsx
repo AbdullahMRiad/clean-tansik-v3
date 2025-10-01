@@ -10,6 +10,7 @@ import TagsSection from "./components/filters/tags";
 import StatsSection from "./components/stats";
 
 import _2025b from "../data/json/2025b.json";
+import Header from "./components/header";
 
 export const AppContext = createContext<{
     gender: Gender;
@@ -134,9 +135,7 @@ function App() {
                 <div
                     id="modifiers"
                     className="md:h-screen md:max-w-sm md:overflow-y-scroll">
-                    <header className="panel p-3! text-center text-3xl font-bold md:text-2xl">
-                        تنسيق الجامعات المصرية للشهادة السعودية
-                    </header>
+                    <Header />
                     <DataSelector />
                     <FiltersSection />
                     <TagsSection />
