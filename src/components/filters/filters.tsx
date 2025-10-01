@@ -28,7 +28,6 @@ function FiltersSection() {
                         defaultChecked
                         onChange={() => {
                             setSearchType("score");
-                            console.log("score");
                         }}
                     />
                 </label>
@@ -46,7 +45,6 @@ function FiltersSection() {
                         className="hidden"
                         onChange={() => {
                             setSearchType("name");
-                            console.log("name");
                         }}
                     />
                 </label>

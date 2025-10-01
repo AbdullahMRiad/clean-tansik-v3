@@ -5,20 +5,26 @@
     --breakpoint-xs: 33rem;
 }
 
+@custom-variant girls {
+    &:where([data-theme="girls"] *) {
+        @slot;
+    }
+}
+
 .panel {
-    @apply m-1 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1;
+    @apply girls:border-red-400 girls:bg-red-100 m-1 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1;
 }
 
 .button {
-    @apply rounded-2xl border-4 border-blue-400 bg-blue-100 text-center text-black transition-all hover:bg-blue-400 hover:text-white active:scale-95 active:bg-blue-600;
+    @apply girls:border-red-400 girls:bg-red-100 hover:girls:bg-red-400 rounded-2xl border-4 border-blue-400 bg-blue-100 text-center text-black transition-all hover:bg-blue-400 hover:text-white active:scale-95 active:bg-blue-600;
 }
 
 .radio-selector {
-    @apply m-1 h-12 w-2/5 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 transition-all hover:bg-blue-400 hover:text-white active:scale-95 active:bg-blue-600 has-checked:w-3/5 has-checked:bg-blue-400 has-checked:font-bold has-checked:text-white;
+    @apply girls:border-red-400 girls:bg-red-100 hover:girls:bg-red-400 has-checked:girls:bg-red-400 m-1 h-12 w-2/5 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 transition-all hover:bg-blue-400 hover:text-white active:scale-95 active:bg-blue-600 has-checked:w-3/5 has-checked:bg-blue-400 has-checked:font-bold has-checked:text-white;
 }
 
 input {
-    @apply rounded-2xl border-blue-400 bg-white px-1 text-black outline-0 transition-all *:outline-0 hover:border-0 focus-visible:border-4;
+    @apply girls:border-red-400 rounded-2xl border-blue-400 bg-white px-1 text-black outline-0 transition-all *:outline-0 hover:border-0 focus-visible:border-4;
 }
 
 ::-webkit-inner-spin-button,
@@ -27,5 +33,5 @@ input {
 }
 
 .checked-tag {
-    @apply bg-blue-400 font-bold text-white transition-all;
+    @apply girls:bg-red-400 bg-blue-400 font-bold text-white transition-all;
 }

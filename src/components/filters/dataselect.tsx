@@ -96,6 +96,8 @@ function DataSelector() {
                         defaultChecked
                         onClick={() => {
                             setGender("boys");
+                            document.querySelector("html")!.dataset.theme =
+                                "boys";
                         }}
                     />
                 </label>
@@ -109,6 +111,8 @@ function DataSelector() {
                         className="hidden"
                         onClick={() => {
                             setGender("girls");
+                            document.querySelector("html")!.dataset.theme =
+                                "girls";
                         }}
                     />
                 </label>

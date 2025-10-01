@@ -71,7 +71,6 @@ function App() {
         }
     }, [schoolScore, quduratScore, searchType]);
     useEffect(() => {
-        // console.log(filteredData);
         if (searchType === "name") {
             setFilteredData(
                 sourceData.filter((v) => {
@@ -90,29 +89,14 @@ function App() {
     useEffect(() => {
         setTaggedData(
             filteredData.filter((v) => {
-                console.log(
-                    tags +
-                        " includes " +
-                        v.المجال +
-                        "? " +
-                        tags.includes(v.المجال),
-                );
                 if (tags.length === 0) return true;
                 return tags.includes(v.المجال);
             }),
         );
     }, [tags, filteredData]);
     useEffect(() => {
-        console.log("effect thing");
         setTaggedData(
             filteredData.filter((v) => {
-                console.log(
-                    types +
-                        " includes " +
-                        v.النوع +
-                        "? " +
-                        types.includes(v.النوع),
-                );
                 if (types.length === 0) return true;
                 return types.includes(v.النوع);
             }),

@@ -21,7 +21,6 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
                         type="text"
                         className="h-12 w-full"
                         onChange={(e) => {
-                            console.log(e.target.value);
                             setCollegeName(e.target.value);
                         }}
                     />
@@ -39,7 +38,6 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
                         step="0.000001"
                         className="h-12 w-full"
                         onChange={(e) => {
-                            console.log(e.target.valueAsNumber);
                             setLimit(e.target.valueAsNumber || 410);
                         }}
                     />
