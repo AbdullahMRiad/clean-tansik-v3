@@ -130,14 +130,18 @@ function App() {
                 taggedData,
                 setTaggedData,
             }}>
-            <div className="flex w-full flex-col">
-                <header className="panel p-3! text-center text-3xl font-bold">
-                    تنسيق الجامعات المصرية للشهادة السعودية
-                </header>
-                <DataSelector />
-                <FiltersSection />
-                <TagsSection />
-                <StatsSection />
+            <div className="flex w-full flex-col md:flex-row">
+                <div
+                    id="modifiers"
+                    className="md:h-screen md:max-w-sm md:overflow-y-scroll">
+                    <header className="panel p-3! text-center text-3xl font-bold md:text-2xl">
+                        تنسيق الجامعات المصرية للشهادة السعودية
+                    </header>
+                    <DataSelector />
+                    <FiltersSection />
+                    <TagsSection />
+                    <StatsSection />
+                </div>
                 <CardsContainer />
             </div>
         </AppContext.Provider>

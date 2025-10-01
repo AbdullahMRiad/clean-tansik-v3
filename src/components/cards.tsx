@@ -7,7 +7,9 @@ export default function CardsContainer() {
         throw new Error("ContextError: Context passed to DataSelector is null");
     const data = ctx.taggedData;
     return (
-        <div id="cards-container" className="grid w-full grid-cols-1">
+        <div
+            id="cards-container"
+            className="grid w-full grid-cols-1 md:h-screen md:overflow-y-scroll lg:grid-cols-2">
             {data.map((v, i) => (
                 <Card
                     name={v.الكلية}

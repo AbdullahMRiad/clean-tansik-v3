@@ -7,7 +7,7 @@
 - [x] Add filtering by college name and limit
 - [x] Add filtering by tags
 - [x] Add theme switching
-- [ ] Add desktop support
+- [x] Add desktop support
 - [ ] Add dark mode
 - [ ] Add about
 - [ ] Update README.md
