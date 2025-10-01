@@ -6,7 +6,7 @@
 - [x] Add filtering by school and qudurat scores
 - [x] Add filtering by college name and limit
 - [x] Add filtering by tags
-- [ ] Add theme switching
+- [x] Add theme switching
 - [ ] Add desktop support
 - [ ] Add dark mode
 - [ ] Add about
