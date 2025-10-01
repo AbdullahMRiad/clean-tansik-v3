@@ -1,10 +1,29 @@
+import { useContext } from "react";
+import { AppContext } from "../App";
+
 function StatsSection() {
+    const ctx = useContext(AppContext);
+    if (!ctx)
+        throw new Error("ContextError: Context passed to StatsSection is null");
+    const { sourceData, filteredData, taggedData } = ctx;
+
     return (
         <div id="stats-section" className="panel grid grid-cols-2 grid-rows-2">
-            <Stat name="إجمالي الكليات" value="240" />
-            <Stat name="الكليات بعد التصفية" value="240" />
-            <Stat name="الكليات المتاحة" value="240" state="success" />
-            <Stat name="الكليات الغير متاحة" value="0" state="fail" />
+            <Stat name="إجمالي الكليات" value={sourceData.length.toString()} />
+            <Stat
+                name="الكليات بعد التصفية"
+                value={taggedData.length.toString()}
+            />
+            <Stat
+                name="الكليات المتاحة"
+                value={filteredData.length.toString()}
+                state="success"
+            />
+            <Stat
+                name="الكليات الغير متاحة"
+                value={(sourceData.length - filteredData.length).toString()}
+                state="fail"
+            />
         </div>
     );
 }
