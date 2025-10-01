@@ -10,6 +10,6 @@
 - [x] Add desktop support
 - [x] Add functionality to stats section
 - [ ] Add dark mode
-- [ ] Add about
+- [x] Add about
 - [ ] Add permalink support for filters
 - [x] Update README.md
