@@ -69,7 +69,7 @@ function App() {
                 }),
             );
         }
-    }, [schoolScore, quduratScore, searchType]);
+    }, [schoolScore, quduratScore, searchType, sourceData]);
     useEffect(() => {
         if (searchType === "name") {
             setFilteredData(
@@ -85,7 +85,7 @@ function App() {
                 }),
             );
         }
-    }, [collegeName, limit, searchType]);
+    }, [collegeName, limit, searchType, sourceData]);
     useEffect(() => {
         setTaggedData(
             filteredData.filter((v) => {
