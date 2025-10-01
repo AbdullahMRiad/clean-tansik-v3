@@ -11,4 +11,4 @@
 - [ ] Add functionality to stats section
 - [ ] Add dark mode
 - [ ] Add about
-- [ ] Update README.md
+- [x] Update README.md
