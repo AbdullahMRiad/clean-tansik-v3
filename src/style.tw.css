@@ -11,28 +11,42 @@
     }
 }
 
+@custom-variant dark (&:where([data-theme-mode=dark], [data-theme-mode=dark] *));
+
 .panel {
-    @apply girls:border-red-400 girls:bg-red-100 m-1 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1;
+    @apply girls:border-red-400 dark:girls:border-stone-700 girls:bg-red-100 dark:girls:bg-stone-800 m-1 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 dark:border-4 dark:border-slate-700 dark:bg-slate-800;
 }
 
 .button {
-    @apply girls:border-red-400 girls:bg-red-100 rounded-2xl border-4 border-blue-400 bg-blue-100 text-center text-black transition-all;
-}
+    @apply girls:border-red-400 dark:girls:border-stone-700 girls:bg-red-100 dark:girls:bg-stone-800 rounded-2xl border-4 border-blue-400 bg-blue-100 text-center text-black transition-all dark:border-slate-700 dark:bg-slate-800 dark:text-white;
 
-.button:hover {
-    @apply girls:bg-red-400 bg-blue-400 text-white;
-}
+    &:hover {
+        @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 text-white dark:bg-slate-700;
+    }
 
-.button:active {
-    @apply girls:bg-red-600 scale-95 bg-blue-600;
+    &:active {
+        @apply girls:bg-red-600 dark:girls:bg-stone-900 scale-95 bg-blue-600 dark:bg-slate-900;
+    }
 }
 
 .radio-selector {
-    @apply girls:border-red-400 girls:bg-red-100 hover:girls:bg-red-400 has-checked:girls:bg-red-400 m-1 h-12 w-2/5 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 transition-all hover:bg-blue-400 hover:text-white active:scale-95 active:bg-blue-600 has-checked:w-3/5 has-checked:bg-blue-400 has-checked:font-bold has-checked:text-white;
+    @apply girls:border-red-400 dark:girls:border-stone-700 girls:bg-red-100 dark:girls:bg-stone-800 m-1 h-12 w-2/5 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 transition-all dark:border-slate-700 dark:bg-slate-800;
+
+    &:hover {
+        @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 text-white dark:bg-slate-700;
+    }
+
+    &:active {
+        @apply girls:bg-red-600 dark:girls:bg-stone-900 scale-95 bg-blue-600 dark:bg-slate-900;
+    }
+
+    &:has(input:checked) {
+        @apply girls:bg-red-400 dark:girls:bg-stone-700 w-3/5 bg-blue-400 font-bold text-white dark:bg-slate-700;
+    }
 }
 
 input {
-    @apply girls:border-red-400 rounded-2xl border-blue-400 bg-white px-1 text-black outline-0 transition-all *:outline-0 hover:border-0 focus-visible:border-4;
+    @apply girls:border-red-400 dark:girls:border-stone-700 rounded-2xl border-blue-400 bg-white px-1 text-black outline-0 transition-all *:outline-0 hover:border-0 focus-visible:border-4 dark:border-slate-700 dark:bg-black dark:text-white;
 }
 
 ::-webkit-inner-spin-button,
@@ -41,5 +55,5 @@ input {
 }
 
 .checked-tag {
-    @apply girls:bg-red-400 bg-blue-400 font-bold text-white transition-all;
+    @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 font-bold text-white transition-all dark:bg-slate-700;
 }

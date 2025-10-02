@@ -45,13 +45,13 @@ function Card({
                 <span>{name}</span>
             </span>
             <div className="flex w-full flex-row" /* scores container */>
-                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1">
+                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1 dark:bg-black">
                     <span className="text-center">الحد الأدنى</span>
                     <span className="text-center text-2xl font-bold">
                         {limit}
                     </span>
                 </div>
-                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1">
+                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1 dark:bg-black">
                     <span className="text-center">
                         درجة القدرات{" "}
                         <button

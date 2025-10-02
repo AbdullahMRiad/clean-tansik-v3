@@ -40,9 +40,11 @@ function Stat({
     let style;
 
     if (state === "fail") {
-        style = " !border-red-400 !bg-red-100";
+        style =
+            " border-red-400! dark:border-red-900! bg-red-100! dark:bg-red-950!";
     } else if (state === "success") {
-        style = " !border-green-400 !bg-green-100";
+        style =
+            " border-green-400! dark:border-green-900! bg-green-100! dark:bg-green-950!";
     } else {
         style = "";
     }
