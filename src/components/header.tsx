@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../App";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const ctx = useContext(AppContext);
+    if (!ctx) throw new Error("ContextError: Context passed to Header is null");
+    const { darkMode, setDarkMode } = ctx;
 
     return (
         <header className="panel flex flex-row items-center gap-2 p-3! text-center text-3xl font-bold md:text-2xl">
@@ -11,12 +15,24 @@ function Header() {
                 menu
             </button>
             <span>تنسيق الجامعات المصرية للشهادة السعودية</span>
-            <Popup isOpen={isOpen} />
+            <Popup
+                isOpen={isOpen}
+                darkMode={darkMode}
+                setDarkMode={setDarkMode}
+            />
         </header>
     );
 }
 
-function Popup({ isOpen }: { isOpen: boolean }) {
+function Popup({
+    isOpen,
+    darkMode,
+    setDarkMode,
+}: {
+    isOpen: boolean;
+    darkMode: boolean;
+    setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
     return (
         <div
             className={
@@ -30,8 +46,10 @@ function Popup({ isOpen }: { isOpen: boolean }) {
             </button> */}
             <div className="flex w-full flex-row justify-between">
                 <span className="text-base font-normal">الوضع الداكن</span>
-                <button className="button px-2 text-base font-normal">
-                    غير مفعل
+                <button
+                    className="button px-2 text-base font-normal"
+                    onClick={() => setDarkMode(!darkMode)}>
+                    {darkMode ? "مفعل" : "غير مفعل"}
                 </button>
             </div>
             <div

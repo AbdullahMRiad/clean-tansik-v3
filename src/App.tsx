@@ -37,6 +37,8 @@ export const AppContext = createContext<{
     setTags: React.Dispatch<React.SetStateAction<string[]>>;
     types: string[];
     setTypes: React.Dispatch<React.SetStateAction<string[]>>;
+    darkMode: boolean;
+    setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }>(null!);
 
 function App() {
@@ -58,6 +60,7 @@ function App() {
     const [searchType, setSearchType] = useState<SearchType>("score");
     const [tags, setTags] = useState<string[]>([]);
     const [types, setTypes] = useState<string[]>([]);
+    const [darkMode, setDarkMode] = useState<boolean>(false);
 
     useEffect(() => {
         if (searchType === "score") {
@@ -103,6 +106,11 @@ function App() {
             }),
         );
     }, [types, filteredData]);
+    useEffect(() => {
+        document.documentElement.dataset.themeMode = darkMode
+            ? "dark"
+            : "light";
+    }, [darkMode]);
     return (
         <AppContext.Provider
             value={{
@@ -130,6 +138,8 @@ function App() {
                 setTypes,
                 taggedData,
                 setTaggedData,
+                darkMode,
+                setDarkMode,
             }}>
             <div className="flex w-full flex-col md:flex-row">
                 <div
