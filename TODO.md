@@ -9,7 +9,7 @@
 - [x] Add theme switching
 - [x] Add desktop support
 - [x] Add functionality to stats section
-- [ ] Add dark mode
+- [x] Add dark mode
 - [x] Add about
 - [ ] Add permalink support for filters
 - [x] Update README.md
