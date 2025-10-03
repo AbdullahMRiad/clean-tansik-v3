@@ -60,7 +60,11 @@ function App() {
     const [searchType, setSearchType] = useState<SearchType>("score");
     const [tags, setTags] = useState<string[]>([]);
     const [types, setTypes] = useState<string[]>([]);
-    const [darkMode, setDarkMode] = useState<boolean>(false);
+    const [darkMode, setDarkMode] = useState<boolean>(() => {
+        const saved = localStorage.getItem("darkMode");
+        if (saved !== null) return saved === "true";
+        return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    });
 
     useEffect(() => {
         if (searchType === "score") {
@@ -110,6 +114,7 @@ function App() {
         document.documentElement.dataset.themeMode = darkMode
             ? "dark"
             : "light";
+        localStorage.setItem("darkMode", darkMode.toString());
     }, [darkMode]);
     return (
         <AppContext.Provider
