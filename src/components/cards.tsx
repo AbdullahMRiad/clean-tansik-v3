@@ -52,10 +52,10 @@ function Card({
                     </span>
                 </div>
                 <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1 dark:bg-black">
-                    <span className="text-center">
-                        درجة القدرات{" "}
+                    <span className="inline-flex justify-center text-center align-middle">
+                        <span>درجة القدرات</span>
                         <span
-                            className="material-symbols-outlined absolute mt-1 mr-1 cursor-pointer border-b-2 border-dotted border-b-black text-[18px]! text-black dark:border-b-white dark:text-white"
+                            className="material-symbols-outlined mr-1 cursor-pointer border-b-2 border-dotted border-b-black text-[18px]! text-black dark:border-b-white dark:text-white"
                             onClick={() =>
                                 alert(
                                     "يشير هذا المربع إلى الحد الأدنى لدرجة القدرات بافتراض الدرجة النهائية في المدرسة",
