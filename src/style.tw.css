@@ -58,7 +58,29 @@
 }
 
 input {
-    @apply rounded-2xl border-blue-400 bg-white px-1 text-center text-black shadow-none inset-shadow-sm/30 outline-0 transition-all focus-visible:shadow-md/30 focus-visible:inset-shadow-none dark:border-slate-700 dark:bg-black dark:text-white;
+    @apply rounded-2xl border-blue-400 bg-white px-1 text-center text-black shadow-sm/20 transition-all duration-500 ease-in-out outline-none *:outline-none dark:border-slate-700 dark:bg-black dark:text-white;
+
+    &:focus-visible {
+        @apply shadow-none;
+    }
+}
+
+input {
+    caret-color: light-dark(var(--color-blue-400), var(--color-slate-400));
+    caret-shape: block;
+    caret-animation: manual;
+    animation: caret-fade 1s infinite ease-in-out;
+}
+
+@keyframes caret-fade {
+    from,
+    to {
+        caret-color: transparent;
+    }
+
+    50% {
+        caret-color: light-dark(var(--color-blue-400), var(--color-slate-400));
+    }
 }
 
 ::-webkit-inner-spin-button,
