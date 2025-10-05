@@ -42,18 +42,18 @@
 }
 
 .radio-selector {
-    @apply girls:bg-red-100 dark:girls:bg-stone-800 m-3 h-12 w-2/5 rounded-2xl bg-blue-300 p-1 transition-all not-dark:shadow-md dark:border-slate-700 dark:bg-slate-800;
+    @apply girls:bg-red-100 dark:girls:bg-stone-800 m-3 h-12 w-2/5 rounded-2xl bg-blue-300 p-1 shadow-sm/20 transition-all dark:border-slate-700 dark:bg-slate-800;
 
     &:hover {
-        @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 text-white dark:bg-slate-700;
+        @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 text-white shadow-none dark:bg-slate-700;
     }
 
     &:active {
-        @apply girls:bg-red-600 dark:girls:bg-stone-900 scale-95 bg-blue-600 dark:bg-slate-900;
+        @apply girls:bg-red-600 dark:girls:bg-stone-900 scale-98 bg-blue-500 inset-shadow-sm/30 dark:bg-slate-900;
     }
 
     &:has(input:checked) {
-        @apply girls:bg-red-400 dark:girls:bg-stone-700 w-3/5 bg-blue-400 font-bold text-white dark:bg-slate-700;
+        @apply girls:bg-red-400 dark:girls:bg-stone-700 w-3/5 bg-blue-400 font-bold text-white shadow-sm/20 dark:bg-slate-700;
     }
 }
 
