@@ -11,5 +11,5 @@
 - [x] Add functionality to stats section
 - [x] Add dark mode
 - [x] Add about
-- [ ] Add permalink support for filters
+- [x] Add permalink support for filters
 - [x] Update README.md
