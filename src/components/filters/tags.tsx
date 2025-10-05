@@ -54,7 +54,7 @@ function TagsSection() {
     return (
         <div id="tags-section" className="panel flex flex-col">
             <span>المجال:</span>
-            <div className="inline-flex flex-wrap gap-1">
+            <div className="inline-flex flex-wrap gap-1.5">
                 {Object.keys(majors).map((v, i) => (
                     <Tag
                         key={i}
@@ -70,8 +70,8 @@ function TagsSection() {
                         checked={tags.includes(v)}></Tag>
                 ))}
             </div>
-            <span>النوع:</span>
-            <div className="inline-flex flex-wrap gap-1">
+            <span className="mt-2">النوع:</span>
+            <div className="inline-flex flex-wrap gap-1.5">
                 {typesArr.map((v, i) => (
                     <Tag
                         key={i}
@@ -104,7 +104,7 @@ function Tag({
     return (
         <button
             className={
-                "button flex flex-row items-center px-2" +
+                "button my-0.5 flex flex-row items-center px-2 py-1" +
                 (checked ? " checked-tag" : "")
             }
             onClick={() => {
