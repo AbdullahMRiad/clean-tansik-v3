@@ -26,23 +26,23 @@
 @custom-variant dark (&:where([data-theme-mode=dark], [data-theme-mode=dark] *));
 
 .panel {
-    @apply girls:border-red-400 dark:girls:border-stone-700 girls:bg-red-100 dark:girls:bg-stone-800 m-1 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 dark:border-4 dark:border-slate-700 dark:bg-slate-800;
+    @apply girls:bg-red-100 dark:girls:bg-stone-800 m-3 rounded-2xl bg-blue-200 p-1.5 shadow-sm/20 dark:bg-slate-800;
 }
 
 .button {
-    @apply girls:border-red-400 dark:girls:border-stone-700 girls:bg-red-100 dark:girls:bg-stone-800 rounded-2xl border-4 border-blue-400 bg-blue-100 text-center text-black transition-all dark:border-slate-700 dark:bg-slate-800 dark:text-white;
+    @apply girls:bg-red-100 dark:girls:bg-stone-800 rounded-2xl bg-blue-300 text-center text-black shadow-sm/20 transition-all dark:border-slate-700 dark:bg-slate-800 dark:text-white;
 
     &:hover {
-        @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 text-white dark:bg-slate-700;
+        @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 text-white shadow-none dark:bg-slate-700;
     }
 
     &:active {
-        @apply girls:bg-red-600 dark:girls:bg-stone-900 scale-95 bg-blue-600 dark:bg-slate-900;
+        @apply girls:bg-red-600 dark:girls:bg-stone-900 scale-98 bg-blue-500 inset-shadow-sm/30 dark:bg-slate-900;
     }
 }
 
 .radio-selector {
-    @apply girls:border-red-400 dark:girls:border-stone-700 girls:bg-red-100 dark:girls:bg-stone-800 m-1 h-12 w-2/5 rounded-2xl border-4 border-blue-400 bg-blue-100 p-1 transition-all dark:border-slate-700 dark:bg-slate-800;
+    @apply girls:bg-red-100 dark:girls:bg-stone-800 m-3 h-12 w-2/5 rounded-2xl bg-blue-300 p-1 transition-all not-dark:shadow-md dark:border-slate-700 dark:bg-slate-800;
 
     &:hover {
         @apply girls:bg-red-400 dark:girls:bg-stone-700 bg-blue-400 text-white dark:bg-slate-700;
@@ -58,7 +58,7 @@
 }
 
 input {
-    @apply girls:border-red-400 dark:girls:border-stone-700 rounded-2xl border-blue-400 bg-white px-1 text-black outline-0 transition-all *:outline-0 hover:border-0 focus-visible:border-4 dark:border-slate-700 dark:bg-black dark:text-white;
+    @apply rounded-2xl border-blue-400 bg-white px-1 text-black shadow-none inset-shadow-sm/30 outline-0 transition-all focus-visible:shadow-md/30 focus-visible:inset-shadow-none dark:border-slate-700 dark:bg-black dark:text-white;
 }
 
 ::-webkit-inner-spin-button,

@@ -39,19 +39,19 @@ function Card({
     icon: string;
 }) {
     return (
-        <div className="card panel">
+        <div className="card panel mt-0!">
             <span className="flex flex-row">
                 <span className="material-symbols-outlined ml-2">{icon}</span>
                 <span>{name}</span>
             </span>
             <div className="flex w-full flex-row" /* scores container */>
-                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1 dark:bg-black">
+                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1 inset-shadow-sm/30 dark:bg-black">
                     <span className="text-center">الحد الأدنى</span>
                     <span className="text-center text-2xl font-bold">
                         {limit}
                     </span>
                 </div>
-                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1 dark:bg-black">
+                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-white p-1 inset-shadow-sm/30 dark:bg-black">
                     <span className="inline-flex justify-center text-center align-middle">
                         <span>درجة القدرات</span>
                         <span

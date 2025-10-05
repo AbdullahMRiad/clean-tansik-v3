@@ -50,7 +50,11 @@ function Stat({
     }
 
     return (
-        <div className={"panel flex flex-col" + style}>
+        <div
+            className={
+                "m-1 flex flex-col rounded-2xl bg-white p-1 inset-shadow-sm/30 dark:bg-black" +
+                style
+            }>
             <span className="text-center">{name}</span>
             <span className="my-2 self-center justify-self-center text-3xl font-bold">
                 {value}
