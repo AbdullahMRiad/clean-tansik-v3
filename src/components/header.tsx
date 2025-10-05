@@ -10,7 +10,7 @@ function Header() {
     return (
         <header className="panel flex flex-row items-center gap-2 p-3! text-center text-3xl font-bold md:text-2xl">
             <button
-                className="button material-symbols-outlined aspect-square w-18"
+                className="button material-symbols-outlined aspect-square min-w-12"
                 onClick={() => setIsOpen(!isOpen)}>
                 menu
             </button>
