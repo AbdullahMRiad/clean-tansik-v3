@@ -1,7 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import Decimal from "decimal.js";
 
-import type { College, Gender, SearchType, Year } from "../types/types";
+import type {
+    College,
+    Context,
+    Gender,
+    SearchType,
+    Year,
+} from "../types/types";
 
 import CardsContainer from "./components/cards";
 import DataSelector from "./components/filters/dataselect";
@@ -12,34 +18,7 @@ import StatsSection from "./components/stats";
 import _2025b from "../data/json/2025b.json";
 import Header from "./components/header";
 
-export const AppContext = createContext<{
-    gender: Gender;
-    setGender: React.Dispatch<React.SetStateAction<Gender>>;
-    year: Year;
-    setYear: React.Dispatch<React.SetStateAction<Year>>;
-    sourceData: College[];
-    setSourceData: React.Dispatch<React.SetStateAction<College[]>>;
-    filteredData: College[];
-    setFilteredData: React.Dispatch<React.SetStateAction<College[]>>;
-    taggedData: College[];
-    setTaggedData: React.Dispatch<React.SetStateAction<College[]>>;
-    schoolScore: number;
-    setSchoolScore: React.Dispatch<React.SetStateAction<number>>;
-    quduratScore: number;
-    setQuduratScore: React.Dispatch<React.SetStateAction<number>>;
-    collegeName: string;
-    setCollegeName: React.Dispatch<React.SetStateAction<string>>;
-    limit: number;
-    setLimit: React.Dispatch<React.SetStateAction<number>>;
-    searchType: SearchType;
-    setSearchType: React.Dispatch<React.SetStateAction<SearchType>>;
-    tags: string[];
-    setTags: React.Dispatch<React.SetStateAction<string[]>>;
-    types: string[];
-    setTypes: React.Dispatch<React.SetStateAction<string[]>>;
-    darkMode: boolean;
-    setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-}>(null!);
+export const AppContext = createContext<Context>(null!);
 
 function App() {
     const params = new URLSearchParams(window.location.search);
