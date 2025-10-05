@@ -55,18 +55,16 @@ function ScoreSearch({ hidden = false }: { hidden?: boolean }) {
             </div>
             <span className="mt-2 w-full text-center">
                 الدرجة بعد المعادلة:{" "}
-                <span id="calculated-score">
+                <span
+                    id="calculated-score"
+                    className="cursor-pointer border-b-2 border-dotted border-black dark:border-white"
+                    onClick={() => alert(message)}>
                     {new Decimal(schoolScore)
                         .div(2)
                         .plus(new Decimal(quduratScore).div(2))
                         .times(4.1)
                         .toString()}
                 </span>
-                <button
-                    className="border-b-2 border-dotted border-black"
-                    onClick={() => alert(message)}>
-                    ℹ️
-                </button>
             </span>
         </div>
     );
