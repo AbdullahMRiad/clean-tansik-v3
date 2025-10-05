@@ -57,6 +57,7 @@ function Popup({
                 className="mt-2 flex flex-row justify-between px-8">
                 <a
                     href="https://www.github.com/AbdullahMRiad/clean-tansik-v3/"
+                    target="_blank"
                     className="h-6 w-6 rounded-full bg-white p-0.5 text-black">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +74,8 @@ function Popup({
                     </svg>
                 </a>
                 <a
-                    href="https://wa.me/966547332469"
+                    href="https://t.me/AbdullahMRiad"
+                    target="_blank"
                     className="h-6 w-6 overflow-clip rounded-full bg-[#54a9eb] text-white">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -86,12 +88,13 @@ function Popup({
                             fill="currentColor"
                             width={4}
                             height={4}
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                         />
                     </svg>
                 </a>
                 <a
-                    href="https://www.github.com/AbdullahMRiad/clean-tansik-v3/"
+                    href="https://wa.me/966547332469"
+                    target="_blank"
                     className="h-6 w-6 overflow-clip rounded-full text-white">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
