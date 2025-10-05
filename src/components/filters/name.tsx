@@ -5,7 +5,7 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to NameSearch is null");
-    const { setCollegeName, setLimit } = ctx;
+    const { setCollegeName, setLimit, limit, collegeName } = ctx;
     return (
         <div
             id="score-search"
@@ -20,6 +20,7 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
                         placeholder="اسم الكلية"
                         type="text"
                         className="h-12 w-full"
+                        defaultValue={collegeName}
                         onChange={(e) => {
                             setCollegeName(e.target.value);
                         }}
@@ -36,6 +37,7 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
                         min="0"
                         max="410"
                         step="0.000001"
+                        defaultValue={limit}
                         className="h-12 w-full"
                         onChange={(e) => {
                             setLimit(e.target.valueAsNumber || 410);

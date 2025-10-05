@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../App";
 
 function TagsSection() {
@@ -66,7 +66,8 @@ function TagsSection() {
                             } else {
                                 setTags([...tags, v]);
                             }
-                        }}></Tag>
+                        }}
+                        checked={tags.includes(v)}></Tag>
                 ))}
             </div>
             <span>النوع:</span>
@@ -81,7 +82,8 @@ function TagsSection() {
                             } else {
                                 setTypes([...types, v]);
                             }
-                        }}></Tag>
+                        }}
+                        checked={types.includes(v)}></Tag>
                 ))}
             </div>
         </div>
@@ -92,13 +94,13 @@ function Tag({
     text,
     icon,
     handleClick,
+    checked,
 }: {
     text: string;
     icon?: string;
     handleClick: () => void;
+    checked: boolean;
 }) {
-    const [checked, setChecked] = useState(false);
-
     return (
         <button
             className={
@@ -107,7 +109,6 @@ function Tag({
             }
             onClick={() => {
                 handleClick();
-                setChecked(!checked);
             }}>
             <i className={icon ? "material-symbols-outlined ml-1" : "hidden"}>
                 {icon}

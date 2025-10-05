@@ -42,8 +42,14 @@ export const AppContext = createContext<{
 }>(null!);
 
 function App() {
-    const [gender, setGender] = useState<Gender>("boys");
-    const [year, setYear] = useState<Year>(2025);
+    const params = new URLSearchParams(window.location.search);
+
+    const [gender, setGender] = useState<Gender>(
+        (params.get("gender") as Gender) || "boys",
+    );
+    const [year, setYear] = useState<Year>(
+        (parseInt(params.get("year") as string) as Year) || 2025,
+    );
     const [sourceData, setSourceData] = useState<College[]>(
         _2025b as College[],
     );
@@ -53,13 +59,27 @@ function App() {
     const [taggedData, setTaggedData] = useState<College[]>(
         _2025b as College[],
     );
-    const [schoolScore, setSchoolScore] = useState<number>(100);
-    const [quduratScore, setQuduratScore] = useState<number>(100);
-    const [collegeName, setCollegeName] = useState<string>("");
-    const [limit, setLimit] = useState<number>(410);
-    const [searchType, setSearchType] = useState<SearchType>("score");
-    const [tags, setTags] = useState<string[]>([]);
-    const [types, setTypes] = useState<string[]>([]);
+    const [schoolScore, setSchoolScore] = useState<number>(
+        parseInt(params.get("school") as string) || 100,
+    );
+    const [quduratScore, setQuduratScore] = useState<number>(
+        parseInt(params.get("qudurat") as string) || 100,
+    );
+    const [collegeName, setCollegeName] = useState<string>(
+        params.get("college") || "",
+    );
+    const [limit, setLimit] = useState<number>(
+        parseInt(params.get("limit") as string) || 410,
+    );
+    const [searchType, setSearchType] = useState<SearchType>(
+        (params.get("search") as SearchType) || "score",
+    );
+    const [tags, setTags] = useState<string[]>(
+        params.get("tags")?.split(",") || [],
+    );
+    const [types, setTypes] = useState<string[]>(
+        params.get("types")?.split(",") || [],
+    );
     const [darkMode, setDarkMode] = useState<boolean>(() => {
         const saved = localStorage.getItem("darkMode");
         if (saved !== null) return saved === "true";
@@ -67,24 +87,44 @@ function App() {
     });
 
     useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        const setters = {
-            gender: (v: string) => setGender(v as Gender),
-            year: (v: string) => setYear(parseInt(v) as Year),
-            school: (v: string) => setSchoolScore(parseInt(v)),
-            qudurat: (v: string) => setQuduratScore(parseInt(v)),
-            college: (v: string) => setCollegeName(v),
-            limit: (v: string) => setLimit(parseInt(v)),
-            search: (v: string) => setSearchType(v as SearchType),
-            tags: (v: string) => setTags(v.split(",")),
-            types: (v: string) => setTypes(v.split(",")),
-        };
-        params.forEach((v, k) => {
-            const setter = setters[k as keyof typeof setters];
-            if (setter) setter(v);
-        });
+        if (searchType === "score") {
+            setFilteredData(
+                sourceData.filter((v) => {
+                    const schoolPart = new Decimal(schoolScore).div(2);
+                    const quduratPart = new Decimal(quduratScore).div(2);
+                    const total = schoolPart.plus(quduratPart).times(4.1);
+                    return Decimal(v.الدرجة) <= total;
+                }),
+            );
+        } else if (searchType === "name") {
+            setFilteredData(
+                sourceData.filter((v) => {
+                    if (collegeName === "") {
+                        return parseFloat(v.الدرجة) <= limit;
+                    } else {
+                        return (
+                            v.الكلية.includes(collegeName) &&
+                            parseFloat(v.الدرجة) <= limit
+                        );
+                    }
+                }),
+            );
+        }
+        setTaggedData(
+            filteredData.filter((v) => {
+                if (tags.length === 0) return true;
+                return tags.includes(v.المجال);
+            }),
+        );
+        setTaggedData(
+            filteredData.filter((v) => {
+                if (types.length === 0) return true;
+                return types.includes(v.النوع);
+            }),
+        );
+        document.querySelector("html")!.dataset.theme =
+            params.get("gender") || "boys";
     }, []);
-
     useEffect(() => {
         if (searchType === "score") {
             setFilteredData(

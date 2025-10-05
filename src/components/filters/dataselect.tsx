@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../../App";
-import type { College, Year } from "../../../types/types";
+import type { College, Gender, Year } from "../../../types/types";
 
 import _2019b from "../../../data/json/2019b.json";
 import _2020b from "../../../data/json/2020b.json";
@@ -93,11 +93,11 @@ function DataSelector() {
                         name="gender"
                         value="boys"
                         className="hidden"
-                        defaultChecked
-                        onClick={() => {
-                            setGender("boys");
+                        checked={gender === "boys"}
+                        onChange={(e) => {
+                            setGender(e.target.value as Gender);
                             document.querySelector("html")!.dataset.theme =
-                                "boys";
+                                e.target.value;
                         }}
                     />
                 </label>
@@ -109,10 +109,11 @@ function DataSelector() {
                         name="gender"
                         value="girls"
                         className="hidden"
-                        onClick={() => {
-                            setGender("girls");
-                            document.querySelector("html")!.dataset.theme =
-                                "girls";
+                        checked={gender === "girls"}
+                        onChange={(e) => {
+                            setGender(e.target.value as Gender);
+                            document.querySelector("html")!.dataset.theme = e
+                                .target.value as Gender;
                         }}
                     />
                 </label>

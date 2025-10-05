@@ -28,6 +28,7 @@ function ScoreSearch({ hidden = false }: { hidden?: boolean }) {
                         max="100"
                         step="0.01"
                         className="h-12 w-full"
+                        defaultValue={schoolScore}
                         onChange={(e) =>
                             setSchoolScore(e.target.valueAsNumber || 0)
                         }
@@ -45,6 +46,7 @@ function ScoreSearch({ hidden = false }: { hidden?: boolean }) {
                         max="100"
                         step="1"
                         className="h-12 w-full"
+                        defaultValue={quduratScore}
                         onChange={(e) =>
                             setQuduratScore(e.target.valueAsNumber || 0)
                         }

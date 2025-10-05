@@ -25,7 +25,7 @@ function FiltersSection() {
                         name="search-type"
                         value="score-search"
                         className="hidden"
-                        defaultChecked
+                        checked={searchType === "score"}
                         onChange={() => {
                             setSearchType("score");
                         }}
@@ -43,6 +43,7 @@ function FiltersSection() {
                         name="search-type"
                         value="name-search"
                         className="hidden"
+                        checked={searchType === "name"}
                         onChange={() => {
                             setSearchType("name");
                         }}
