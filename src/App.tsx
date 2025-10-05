@@ -67,6 +67,25 @@ function App() {
     });
 
     useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const setters = {
+            gender: (v: string) => setGender(v as Gender),
+            year: (v: string) => setYear(parseInt(v) as Year),
+            school: (v: string) => setSchoolScore(parseInt(v)),
+            qudurat: (v: string) => setQuduratScore(parseInt(v)),
+            college: (v: string) => setCollegeName(v),
+            limit: (v: string) => setLimit(parseInt(v)),
+            search: (v: string) => setSearchType(v as SearchType),
+            tags: (v: string) => setTags(v.split(",")),
+            types: (v: string) => setTypes(v.split(",")),
+        };
+        params.forEach((v, k) => {
+            const setter = setters[k as keyof typeof setters];
+            if (setter) setter(v);
+        });
+    }, []);
+
+    useEffect(() => {
         if (searchType === "score") {
             setFilteredData(
                 sourceData.filter((v) => {
