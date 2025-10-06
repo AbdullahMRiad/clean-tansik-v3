@@ -65,21 +65,25 @@ input {
     }
 }
 
-input {
-    caret-color: light-dark(var(--color-blue-400), var(--color-slate-400));
-    caret-shape: block;
-    caret-animation: manual;
-    animation: caret-fade 1s infinite ease-in-out;
-}
-
-@keyframes caret-fade {
-    from,
-    to {
-        caret-color: transparent;
+@supports (caret-animation: manual) {
+    input {
+        caret-color: light-dark(var(--color-blue-400), var(--color-slate-400));
+        caret-animation: manual;
+        animation: caret-fade 1s infinite ease-in-out;
     }
 
-    50% {
-        caret-color: light-dark(var(--color-blue-400), var(--color-slate-400));
+    @keyframes caret-fade {
+        from,
+        to {
+            caret-color: transparent;
+        }
+
+        50% {
+            caret-color: light-dark(
+                var(--color-blue-400),
+                var(--color-slate-400)
+            );
+        }
     }
 }
 
