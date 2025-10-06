@@ -8,7 +8,9 @@ function StatsSection() {
     const { sourceData, filteredData, taggedData } = ctx;
 
     return (
-        <div id="stats-section" className="panel grid grid-cols-2 grid-rows-2">
+        <div
+            id="stats-section"
+            className="panel mb-0.5! grid grid-cols-2 grid-rows-2">
             <Stat name="إجمالي الكليات" value={sourceData.length.toString()} />
             <Stat
                 name="الكليات بعد التصفية"
