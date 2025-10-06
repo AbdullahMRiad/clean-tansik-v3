@@ -4,17 +4,17 @@
     --default-font-family: "IBM Plex Sans Arabic";
     --breakpoint-xs: 33rem;
 
-    --color-stone-50: oklch(98.5% 0.04 350);
-    --color-stone-100: oklch(97% 0.04 350);
-    --color-stone-200: oklch(92.3% 0.04 350);
-    --color-stone-300: oklch(86.9% 0.04 350);
-    --color-stone-400: oklch(70.9% 0.04 350);
-    --color-stone-500: oklch(55.3% 0.04 350);
-    --color-stone-600: oklch(44.4% 0.04 350);
-    --color-stone-700: oklch(37.4% 0.04 350);
-    --color-stone-800: oklch(26.8% 0.04 350);
-    --color-stone-900: oklch(21.6% 0.04 350);
-    --color-stone-950: oklch(14.7% 0.04 350);
+    --color-stone-50: oklch(98.5% 0.04 10);
+    --color-stone-100: oklch(97% 0.04 10);
+    --color-stone-200: oklch(92.3% 0.04 10);
+    --color-stone-300: oklch(86.9% 0.04 10);
+    --color-stone-400: oklch(70.9% 0.04 10);
+    --color-stone-500: oklch(55.3% 0.04 10);
+    --color-stone-600: oklch(44.4% 0.04 10);
+    --color-stone-700: oklch(37.4% 0.04 10);
+    --color-stone-800: oklch(26.8% 0.04 10);
+    --color-stone-900: oklch(21.6% 0.04 10);
+    --color-stone-950: oklch(14.7% 0.04 10);
 }
 
 @custom-variant girls {
