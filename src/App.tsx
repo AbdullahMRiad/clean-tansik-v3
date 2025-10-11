@@ -184,10 +184,10 @@ function App() {
                 darkMode,
                 setDarkMode,
             }}>
-            <div className="flex w-full flex-col md:flex-row">
+            <div className="flex h-screen w-full flex-col gap-2 p-2 md:flex-row">
                 <div
                     id="modifiers"
-                    className="md:h-screen md:max-w-sm md:overflow-y-scroll">
+                    className="flex flex-col gap-2 rounded-2xl md:h-full md:max-w-sm md:overflow-y-scroll">
                     <Header />
                     <DataSelector />
                     <FiltersSection />

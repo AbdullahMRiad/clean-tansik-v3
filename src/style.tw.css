@@ -26,7 +26,7 @@
 @custom-variant dark (&:where([data-theme-mode=dark], [data-theme-mode=dark] *));
 
 .panel {
-    @apply girls:bg-red-200 dark:girls:bg-stone-800 m-3 rounded-2xl bg-blue-200 p-1.5 shadow-sm/20 dark:bg-slate-800;
+    @apply girls:bg-red-200 dark:girls:bg-stone-800 rounded-2xl bg-blue-200 p-1.5 shadow-sm/20 dark:bg-slate-800;
 }
 
 .button {

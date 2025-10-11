@@ -9,7 +9,7 @@ export default function CardsContainer() {
     return (
         <div
             id="cards-container"
-            className="grid w-full grid-cols-1 pt-2.5 md:h-screen md:overflow-y-scroll lg:grid-cols-2">
+            className="grid w-full grid-cols-1 gap-2 rounded-2xl md:h-full md:overflow-y-scroll lg:grid-cols-2">
             {data.map((v, i) => (
                 <Card
                     name={v.الكلية}
@@ -39,7 +39,7 @@ function Card({
     icon: string;
 }) {
     return (
-        <div className="card panel mt-0!">
+        <div className="card panel">
             <span className="flex flex-row">
                 <span className="material-symbols-outlined ml-2">{icon}</span>
                 <span>{name}</span>
