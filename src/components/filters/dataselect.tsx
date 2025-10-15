@@ -85,7 +85,7 @@ function DataSelector() {
     return (
         <div id="dataselector-container" className="panel">
             <div id="gender-selector" className="flex w-full">
-                <label htmlFor="boys" className="radio-selector flex">
+                <label htmlFor="boys" className="radio-selector button flex">
                     <span className="mx-auto self-center">بنين</span>
                     <input
                         type="radio"
@@ -101,7 +101,7 @@ function DataSelector() {
                         }}
                     />
                 </label>
-                <label htmlFor="girls" className="radio-selector flex">
+                <label htmlFor="girls" className="radio-selector button flex">
                     <span className="mx-auto self-center">بنات</span>
                     <input
                         type="radio"

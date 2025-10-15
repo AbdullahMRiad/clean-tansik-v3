@@ -15,7 +15,7 @@ function FiltersSection() {
             <div id="searchtype-selector" className="flex w-full">
                 <label
                     htmlFor="score-search"
-                    className="radio-selector xs:!h-16 flex !h-20 !w-1/3 text-center has-checked:!w-2/3">
+                    className="radio-selector button xs:!h-16 flex !h-20 !w-1/3 text-center has-checked:!w-2/3">
                     <span className="mx-auto self-center">
                         درجتي المدرسة والقدرات
                     </span>
@@ -33,7 +33,7 @@ function FiltersSection() {
                 </label>
                 <label
                     htmlFor="name-search"
-                    className="radio-selector xs:!h-16 flex !h-20 !w-1/3 text-center has-checked:!w-2/3">
+                    className="radio-selector button xs:!h-16 flex !h-20 !w-1/3 text-center has-checked:!w-2/3">
                     <span className="mx-auto self-center">
                         اسم الكلية والحد الأدنى
                     </span>
