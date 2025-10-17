@@ -37,7 +37,7 @@
     }
 
     &:active {
-        @apply girls:bg-red-500 dark:girls:bg-stone-900 scale-98 bg-blue-500 dark:bg-slate-900;
+        @apply girls:bg-red-500 dark:girls:bg-[oklch(from_var(--color-stone-800)_calc(l-0.03)_c_h)] scale-98 bg-blue-500 dark:bg-[oklch(from_var(--color-slate-800)_calc(l-0.03)_c_h)];
     }
 }
 
@@ -46,6 +46,10 @@
 
     &:has(input:checked) {
         @apply girls:bg-red-400 dark:girls:bg-stone-500 w-3/5 bg-blue-400 font-bold text-white dark:bg-slate-500;
+
+        &:active {
+            @apply girls:bg-red-500 dark:girls:bg-[oklch(from_var(--color-stone-800)_calc(l-0.03)_c_h)] scale-98 bg-blue-500 dark:bg-[oklch(from_var(--color-slate-800)_calc(l-0.03)_c_h)];
+        }
     }
 }
 
