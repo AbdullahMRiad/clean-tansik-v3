@@ -31,9 +31,18 @@ function OptionsPanel() {
                             الوضع الداكن
                         </span>
                         <button
-                            className="button text-base font-normal"
+                            className={
+                                "button h-8 w-16 px-1 py-1 text-base font-normal" +
+                                (darkMode ? " bg-blue-400!" : " bg-slate-700!")
+                            }
                             onClick={() => setDarkMode(!darkMode)}>
-                            {darkMode ? "مفعل" : "غير مفعل"}
+                            <div
+                                className={
+                                    "aspect-square h-full rounded-full bg-white transition-all" +
+                                    (darkMode
+                                        ? " mr-auto ml-0"
+                                        : " mr-0 ml-auto")
+                                }></div>
                         </button>
                     </div>
                     <div
