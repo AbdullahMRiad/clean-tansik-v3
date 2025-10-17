@@ -19,35 +19,39 @@ function OptionsPanel() {
             closedby="any"
             className="m-auto bg-transparent text-black dark:text-white"
             onClose={() => setIsOptionsOpen(false)}>
-            <div className="panel flex w-64! flex-row justify-between gap-2 align-middle">
-                <button
-                    className="button material-symbols-outlined h-12 w-12"
-                    onClick={() => setIsOptionsOpen(false)}>
-                    close
-                </button>
-                <div className="flex flex-col gap-2">
-                    <div className="flex w-full flex-row justify-between gap-2">
-                        <span className="text-base font-normal">
-                            الوضع الداكن
-                        </span>
-                        <button
-                            className={
-                                "button h-8 w-16 px-1 py-1 text-base font-normal" +
-                                (darkMode ? " bg-blue-400!" : " bg-slate-700!")
-                            }
-                            onClick={() => setDarkMode(!darkMode)}>
-                            <div
+            <div className="panel flex h-32 w-64 flex-row justify-between gap-2">
+                <div className="flex grow flex-col gap-2">
+                    <button
+                        className="button material-symbols-outlined h-8 w-8"
+                        onClick={() => setIsOptionsOpen(false)}>
+                        close
+                    </button>
+                    <div className="flex flex-col px-2">
+                        <div className="flex w-full flex-row items-center justify-between">
+                            <span className="text-base font-normal">
+                                الوضع الداكن
+                            </span>
+                            <button
                                 className={
-                                    "aspect-square h-full rounded-full bg-white transition-all" +
+                                    "button h-6 w-10 px-1 py-1 text-base font-normal" +
                                     (darkMode
-                                        ? " mr-auto ml-0"
-                                        : " mr-0 ml-auto")
-                                }></div>
-                        </button>
+                                        ? " bg-blue-400!"
+                                        : " bg-slate-700!")
+                                }
+                                onClick={() => setDarkMode(!darkMode)}>
+                                <div
+                                    className={
+                                        "aspect-square h-full rounded-full bg-white transition-all" +
+                                        (darkMode
+                                            ? " mr-auto ml-0"
+                                            : " mr-0 ml-auto")
+                                    }></div>
+                            </button>
+                        </div>
                     </div>
                     <div
                         id="contact-info"
-                        className="flex flex-row justify-between">
+                        className="flex flex-row justify-center gap-2">
                         <a
                             href="https://www.github.com/AbdullahMRiad/clean-tansik-v3/"
                             target="_blank"
