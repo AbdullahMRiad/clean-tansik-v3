@@ -25,4 +25,3 @@ dist-ssr
 
 # Procedurally tagged and converted data files
 data/tagged/*
-.vercel
