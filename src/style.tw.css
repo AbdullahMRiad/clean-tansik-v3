@@ -113,3 +113,20 @@ input {
         backdrop-filter: blur(5px);
     }
 }
+
+@media (width >= 48rem) {
+    .scroll-container {
+        scrollbar-color: var(--color-blue-300) var(--color-blue-50);
+        scrollbar-width: thin;
+        &:where([data-theme="girls"] *) {
+            scrollbar-color: var(--color-red-300) var(--color-red-50);
+        }
+        &:where([data-theme-mode="dark"] *) {
+            scrollbar-color: var(--color-slate-700) var(--color-slate-950);
+            scrollbar-width: thin;
+            &:where([data-theme="girls"] *) {
+                scrollbar-color: var(--color-stone-700) var(--color-stone-950);
+            }
+        }
+    }
+}

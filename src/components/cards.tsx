@@ -9,7 +9,7 @@ export default function CardsContainer() {
     return (
         <div
             id="cards-container"
-            className="grid w-full grid-cols-1 gap-2 rounded-2xl md:h-full md:overflow-y-scroll lg:grid-cols-2">
+            className="scroll-container grid w-full grid-cols-1 gap-2 rounded-2xl md:h-full md:overflow-y-scroll lg:grid-cols-2">
             {data.map((v, i) => (
                 <Card
                     name={v.الكلية}

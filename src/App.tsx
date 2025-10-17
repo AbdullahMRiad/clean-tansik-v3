@@ -191,7 +191,7 @@ function App() {
             <div className="flex h-screen w-full flex-col gap-2 p-2 md:flex-row">
                 <div
                     id="modifiers"
-                    className="flex flex-col gap-2 rounded-2xl md:h-full md:max-w-sm md:overflow-y-scroll">
+                    className="scroll-container flex flex-col gap-2 rounded-2xl md:h-full md:max-w-sm md:overflow-y-scroll">
                     <Header />
                     <OptionsPanel />
                     <DataSelector />
