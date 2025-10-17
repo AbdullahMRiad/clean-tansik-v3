@@ -17,6 +17,7 @@ import StatsSection from "./components/stats";
 
 import _2025b from "../data/json/2025b.json";
 import Header from "./components/header";
+import OptionsPanel from "./components/options";
 
 export const AppContext = createContext<Context>(null!);
 
@@ -64,6 +65,7 @@ function App() {
         if (saved !== null) return saved === "true";
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
     });
+    const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false);
 
     useEffect(() => {
         if (searchType === "score") {
@@ -183,12 +185,15 @@ function App() {
                 setTaggedData,
                 darkMode,
                 setDarkMode,
+                isOptionsOpen,
+                setIsOptionsOpen,
             }}>
             <div className="flex h-screen w-full flex-col gap-2 p-2 md:flex-row">
                 <div
                     id="modifiers"
                     className="flex flex-col gap-2 rounded-2xl md:h-full md:max-w-sm md:overflow-y-scroll">
                     <Header />
+                    <OptionsPanel />
                     <DataSelector />
                     <FiltersSection />
                     <TagsSection />

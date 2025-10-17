@@ -39,4 +39,6 @@ export type Context = {
     setTypes: React.Dispatch<React.SetStateAction<string[]>>;
     darkMode: boolean;
     setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+    isOptionsOpen: boolean;
+    setIsOptionsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
