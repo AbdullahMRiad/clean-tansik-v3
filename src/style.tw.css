@@ -83,3 +83,8 @@ input {
 .checked-tag {
     @apply girls:bg-red-400 dark:girls:bg-stone-500 bg-blue-400 font-bold text-white transition-all dark:bg-slate-500;
 }
+
+#options::backdrop {
+    background-color: hsl(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+}
