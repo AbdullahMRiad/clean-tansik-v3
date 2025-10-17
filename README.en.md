@@ -8,8 +8,8 @@ A full rewrite of [AbdullahMRiad/clean-tansik-v2](https://www.github.com/Abdulla
 
 A simple website to view the Egyptian university admission limits for the Saudi high school certificate in the years 2019-2025, separated by boys data and girls data. It supports quick search and filtering by school grade and Saudi GAT score or by college name and limit.
 
-🔗 **Live site:** (Not available for now)\
-🔗 **Testing site:** [tansik-dev.vercel.app](https://tansik-dev.vercel.app/)
+🔗 **Live site:** [tansik.pages.dev](https://tansik.pages.dev)\
+🔗 **Testing site:** [dev.tansik.pages.dev](https://dev.tansik.pages.dev/)
 
 ---
 
@@ -75,4 +75,6 @@ You can:
 4. From here, you can:
     - Run the development server with `npm run dev` (supports hot reload)
     - Build and run the website with `npm run build` then `npm run preview`
-    - Deploy it to Vercel or Netlify for free (signup required)
+    - Deploy it to ~~Vercel~~[^1] Netlify or Cloudflare Pages for free (signup required)
+
+[^1]: Do **NOT** use Vercel. [Guillermo Rauch, Vercel's CEO, is a close friend of war criminal Benjamin Netanyahu](https://x.com/rauchg/status/1972669025525158031)
