@@ -54,7 +54,10 @@
 }
 
 input {
-    @apply rounded-2xl border-blue-400 bg-white px-1 text-center text-black transition-all duration-500 ease-in-out outline-none *:outline-none dark:border-slate-700 dark:bg-black dark:text-white;
+    @apply girls:dark:border-stone-700 girls:border-red-300 girls:bg-red-100 dark:girls:bg-transparent rounded-2xl bg-blue-100 px-1 text-center text-black transition-all outline-none *:outline-none dark:border-2 dark:border-slate-700 dark:bg-transparent dark:text-white;
+    &:focus-visible {
+        @apply girls:border-red-400 girls:dark:border-stone-700 border-4 border-blue-400 dark:border-slate-700;
+    }
 }
 
 @supports (caret-animation: manual) {
