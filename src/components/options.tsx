@@ -17,7 +17,7 @@ function OptionsPanel() {
         <dialog
             id="options"
             closedby="any"
-            className="m-auto bg-transparent"
+            className="m-auto bg-transparent text-black dark:text-white"
             onClose={() => setIsOptionsOpen(false)}>
             <div className="panel flex w-64! flex-row justify-between gap-2 align-middle">
                 <button
