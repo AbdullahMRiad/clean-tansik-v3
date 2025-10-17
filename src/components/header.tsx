@@ -36,7 +36,7 @@ function Popup({
     return (
         <div
             className={
-                "panel absolute top-2 z-50 w-48! shadow-2xl transition-all duration-300 ease-in-out" +
+                "panel absolute top-2 z-50 w-48! transition-all duration-300 ease-in-out" +
                 (isOpen
                     ? " right-20 scale-x-100 scale-y-100 opacity-100"
                     : " pointer-events-none -right-14 scale-x-25 scale-y-60 opacity-0")
