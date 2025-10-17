@@ -1,10 +1,18 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 
 function OptionsPanel() {
     const ctx = useContext(AppContext);
     if (!ctx) throw new Error("ContextError: Context passed to Header is null");
-    const { setIsOptionsOpen, darkMode, setDarkMode } = ctx;
+    const { setIsOptionsOpen, isOptionsOpen, darkMode, setDarkMode } = ctx;
+    useEffect(() => {
+        const options = document.getElementById("options") as HTMLDialogElement;
+        if (isOptionsOpen) {
+            if (options) options.showModal();
+        } else {
+            if (options) options.close();
+        }
+    }, [isOptionsOpen]);
     return (
         <dialog
             id="options"
