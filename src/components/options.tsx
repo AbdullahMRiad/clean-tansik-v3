@@ -4,15 +4,14 @@ import { AppContext } from "../App";
 function OptionsPanel() {
     const ctx = useContext(AppContext);
     if (!ctx) throw new Error("ContextError: Context passed to Header is null");
-    const { setIsOptionsOpen, isOptionsOpen, darkMode, setDarkMode } = ctx;
+    const { setIsOptionsOpen, darkMode, setDarkMode } = ctx;
     return (
         <dialog
             id="options"
             closedby="any"
-            open={isOptionsOpen}
-            className="m-auto bg-transparent transition-all"
+            className="m-auto bg-transparent"
             onClose={() => setIsOptionsOpen(false)}>
-            <div className="panel flex w-64! flex-row justify-between gap-2 align-middle transition-all duration-300 ease-in-out">
+            <div className="panel flex w-64! flex-row justify-between gap-2 align-middle">
                 <button
                     className="button material-symbols-outlined h-12 w-12"
                     onClick={() => setIsOptionsOpen(false)}>
