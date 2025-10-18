@@ -36,8 +36,8 @@ function OptionsPanel() {
                                 className={
                                     "button h-6 w-10 px-1 py-1 text-base font-normal" +
                                     (darkMode
-                                        ? " bg-blue-400!"
-                                        : " bg-slate-700!")
+                                        ? " girls:bg-red-400! bg-blue-400!"
+                                        : " girls:bg-stone-700! bg-slate-700!")
                                 }
                                 onClick={() => setDarkMode(!darkMode)}>
                                 <div
