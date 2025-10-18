@@ -120,23 +120,23 @@ function DataSelector() {
             </div>
             <div id="year-selector" className="flex justify-center">
                 <button
-                    className="button h-12 w-12"
+                    className="button material-symbols-outlined h-12 w-12"
                     onClick={() => {
                         if (year < 2025) {
                             setYear((year + 1) as Year);
                         }
                     }}>
-                    +
+                    keyboard_arrow_up
                 </button>
                 <span className="mx-8 h-min self-center text-lg">{year}</span>
                 <button
-                    className="button h-12 w-12"
+                    className="button material-symbols-outlined h-12 w-12"
                     onClick={() => {
                         if (year > 2019) {
                             setYear((year - 1) as Year);
                         }
                     }}>
-                    -
+                    keyboard_arrow_down
                 </button>
             </div>
         </div>
