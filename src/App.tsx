@@ -10,14 +10,9 @@ import type {
 } from "../types/types";
 
 import CardsContainer from "./components/cards";
-import DataSelector from "./components/filters/dataselect";
-import FiltersSection from "./components/filters/filters";
-import TagsSection from "./components/filters/tags";
-import StatsSection from "./components/stats";
+import ModifiersContainer from "./components/modifiers";
 
 import _2025b from "../data/json/2025b.json";
-import Header from "./components/header";
-import OptionsPanel from "./components/options";
 
 export const AppContext = createContext<Context>(null!);
 
@@ -189,16 +184,7 @@ function App() {
                 setIsOptionsOpen,
             }}>
             <div className="flex h-screen w-full flex-col gap-2 p-2 md:flex-row">
-                <div
-                    id="modifiers"
-                    className="scroll-container flex flex-col gap-2 rounded-2xl md:h-full md:max-w-sm md:overflow-y-scroll">
-                    <Header />
-                    <OptionsPanel />
-                    <DataSelector />
-                    <FiltersSection />
-                    <TagsSection />
-                    <StatsSection />
-                </div>
+                <ModifiersContainer />
                 <CardsContainer />
             </div>
         </AppContext.Provider>
