@@ -52,7 +52,7 @@ function Stat({
     return (
         <div
             className={
-                "girls:bg-red-100 girls:dark:border-stone-700 m-1 flex flex-col rounded-2xl bg-blue-100 p-1 dark:border-2 dark:border-slate-700 dark:bg-transparent" +
+                "girls:bg-red-100 girls:dark:border-stone-700 girls:dark:bg-transparent m-1 flex flex-col rounded-2xl bg-blue-100 p-1 dark:border-2 dark:border-slate-700 dark:bg-transparent" +
                 style
             }>
             <span className="text-center">{name}</span>
