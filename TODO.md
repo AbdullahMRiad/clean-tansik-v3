@@ -1,15 +1,3 @@
-- [x] Add search by name and limit
-- [x] Add tags section
-- [x] Add stats section
-- [x] Add college display cards
-- [x] Add data selection
-- [x] Add filtering by school and qudurat scores
-- [x] Add filtering by college name and limit
-- [x] Add filtering by tags
-- [x] Add theme switching
-- [x] Add desktop support
-- [x] Add functionality to stats section
-- [x] Add dark mode
-- [x] Add about
-- [x] Add permalink support for filters
-- [x] Update README.md
+- [ ] Add copy link to filters
+- [ ] Add reset filters
+- [ ] Add scroll to top and to results
