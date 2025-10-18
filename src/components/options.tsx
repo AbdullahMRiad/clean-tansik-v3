@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../App";
+import GetFiltersPermalink from "../../utils/GetFiltersPermalink";
 
 function OptionsPanel() {
     const ctx = useContext(AppContext);
@@ -19,14 +20,14 @@ function OptionsPanel() {
             closedby="any"
             className="m-auto bg-transparent text-black dark:text-white"
             onClose={() => setIsOptionsOpen(false)}>
-            <div className="panel flex h-32 w-64 flex-row justify-between gap-2">
+            <div className="panel flex h-48 w-64 flex-row justify-between gap-2">
                 <div className="flex grow flex-col gap-2">
                     <button
                         className="button material-symbols-outlined h-8 w-8"
                         onClick={() => setIsOptionsOpen(false)}>
                         close
                     </button>
-                    <div className="flex flex-col px-2">
+                    <div className="flex flex-col gap-2 px-2">
                         <div className="flex w-full flex-row items-center justify-between">
                             <span className="text-base font-normal">
                                 الوضع الداكن
@@ -46,6 +47,21 @@ function OptionsPanel() {
                                             ? " mr-auto ml-0"
                                             : " mr-0 ml-auto")
                                     }></div>
+                            </button>
+                        </div>
+                        <div className="flex w-full flex-row items-center justify-between">
+                            <button
+                                className={
+                                    "button w-full px-1 py-1 text-base font-normal"
+                                }
+                                onClick={() =>
+                                    navigator.clipboard.writeText(
+                                        GetFiltersPermalink(ctx),
+                                    )
+                                }>
+                                <span className="text-base font-normal">
+                                    نسخ الرابط المباشر للنتائج
+                                </span>
                             </button>
                         </div>
                     </div>
