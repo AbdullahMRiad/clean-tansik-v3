@@ -9,20 +9,36 @@ export default function CardsContainer() {
     return (
         <div
             id="cards-container"
-            className="scroll-container grid w-full grid-cols-1 gap-2 rounded-2xl md:h-full md:overflow-y-scroll lg:grid-cols-2">
-            {data.map((v, i) => (
-                <Card
-                    name={v.الكلية}
-                    limit={parseFloat(v.الدرجة)}
-                    icon={v.الأيقونة}
-                    quduratScore={Math.ceil(
-                        parseFloat(
-                            ((2 * parseFloat(v.الدرجة)) / 4.1 - 100).toFixed(6),
-                        ),
-                    )}
-                    key={i}
-                />
-            ))}
+            className={
+                data.length === 0
+                    ? "scroll-container flex w-full flex-col items-center justify-center rounded-2xl md:h-full"
+                    : "scroll-container grid w-full grid-cols-1 gap-2 rounded-2xl md:h-full md:overflow-y-scroll lg:grid-cols-2"
+            }>
+            {data.length > 0 ? (
+                data.map((v, i) => (
+                    <Card
+                        name={v.الكلية}
+                        limit={parseFloat(v.الدرجة)}
+                        icon={v.الأيقونة}
+                        quduratScore={Math.ceil(
+                            parseFloat(
+                                (
+                                    (2 * parseFloat(v.الدرجة)) / 4.1 -
+                                    100
+                                ).toFixed(6),
+                            ),
+                        )}
+                        key={i}
+                    />
+                ))
+            ) : (
+                <>
+                    <span className="material-symbols-outlined text-[96px]!">
+                        error
+                    </span>
+                    <span className="text-2xl font-bold">لا توجد نتائج</span>
+                </>
+            )}
         </div>
     );
 }
