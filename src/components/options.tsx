@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 import GetFiltersPermalink from "../../utils/GetFiltersPermalink";
+import ResetFilters from "../../utils/ResetFiltres";
 
 function OptionsPanel() {
     const ctx = useContext(AppContext);
@@ -61,6 +62,17 @@ function OptionsPanel() {
                                 }>
                                 <span className="text-base font-normal">
                                     نسخ الرابط المباشر للنتائج
+                                </span>
+                            </button>
+                        </div>
+                        <div className="flex w-full flex-row items-center justify-between">
+                            <button
+                                className={
+                                    "button w-full px-1 py-1 text-base font-normal"
+                                }
+                                onClick={() => ResetFilters(ctx)}>
+                                <span className="text-base font-normal">
+                                    إعادة ضبط إعدادات التصفية
                                 </span>
                             </button>
                         </div>
