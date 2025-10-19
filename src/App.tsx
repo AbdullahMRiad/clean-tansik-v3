@@ -151,6 +151,72 @@ function App() {
             : "light";
         localStorage.setItem("darkMode", darkMode.toString());
     }, [darkMode]);
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        let observer: IntersectionObserver | null = null;
+
+        const setupObserver = () => {
+            if (!mediaQuery.matches) {
+                observer?.disconnect();
+                observer = null;
+                setIsScrolled(false);
+                return;
+            }
+
+            observer = new IntersectionObserver(
+                (e) => setIsScrolled(!e[0].isIntersecting),
+                { threshold: 0 },
+            );
+
+            const target = document.getElementById("filters-section");
+            if (target) observer.observe(target);
+        };
+
+        setupObserver();
+        mediaQuery.addEventListener("change", setupObserver);
+
+        return () => {
+            mediaQuery.removeEventListener("change", setupObserver);
+            observer?.disconnect();
+        };
+    }, []);
+    const [isSkipped, setIsSkipped] = useState(false);
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        let observer: IntersectionObserver | null = null;
+
+        const setupObserver = () => {
+            if (!mediaQuery.matches) {
+                observer?.disconnect();
+                observer = null;
+                setIsSkipped(false);
+                return;
+            }
+
+            observer = new IntersectionObserver(
+                (e) =>
+                    setIsSkipped(
+                        !e[0].isIntersecting && e[0].boundingClientRect.top < 0,
+                    ),
+                { threshold: 0 },
+            );
+
+            const target = document.getElementById("filters-section");
+            if (target) observer.observe(target);
+        };
+
+        setupObserver();
+        mediaQuery.addEventListener("change", setupObserver);
+
+        return () => {
+            mediaQuery.removeEventListener("change", setupObserver);
+            observer?.disconnect();
+        };
+    }, []);
+
     return (
         <AppContext.Provider
             value={{
@@ -186,6 +252,34 @@ function App() {
             <div className="flex h-screen w-full flex-col gap-2 p-2 md:flex-row">
                 <ModifiersContainer />
                 <CardsContainer />
+                <button
+                    className={`button material-symbols-outlined fixed bottom-2 left-2 aspect-square w-fit! p-2! transition-all ${isScrolled ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                    onClick={() => {
+                        document.scrollingElement?.scrollTo({
+                            top: 0,
+                            left: 0,
+                            behavior: "smooth",
+                        });
+                    }}>
+                    vertical_align_top
+                </button>
+                <button
+                    className={`button material-symbols-outlined fixed bottom-2 left-1/2 aspect-square w-fit! -translate-x-1/2 p-2! transition-all ${!isSkipped ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                    onClick={() => {
+                        document.scrollingElement?.scrollTo({
+                            top: Math.floor(
+                                document
+                                    .querySelectorAll(".card")[0]
+                                    .getBoundingClientRect().top +
+                                    window.scrollY,
+                            ),
+                            left: 0,
+                            behavior: "smooth",
+                        });
+                        setIsSkipped(true);
+                    }}>
+                    vertical_align_bottom
+                </button>
             </div>
         </AppContext.Provider>
     );
