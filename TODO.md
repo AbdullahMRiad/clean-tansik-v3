@@ -1,3 +1,3 @@
-- [ ] Add copy link to filters
-- [ ] Add reset filters
-- [ ] Add scroll to top and to results
+- [x] Add copy link to filters
+- [x] Add reset filters
+- [x] Add scroll to top and to results
