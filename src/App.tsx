@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import Decimal from "decimal.js";
 
 import type {
     College,
@@ -13,6 +12,7 @@ import CardsContainer from "./components/cards";
 import ModifiersContainer from "./components/modifiers";
 
 import _2025b from "../data/json/2025b.json";
+import FilterData from "../utils/FilterData";
 
 export const AppContext = createContext<Context>(null!);
 
@@ -28,12 +28,7 @@ function App() {
     const [sourceData, setSourceData] = useState<College[]>(
         _2025b as College[],
     );
-    const [filteredData, setFilteredData] = useState<College[]>(
-        _2025b as College[],
-    );
-    const [taggedData, setTaggedData] = useState<College[]>(
-        _2025b as College[],
-    );
+    const [finalData, setFinalData] = useState<College[]>(_2025b as College[]);
     const [schoolScore, setSchoolScore] = useState<number>(
         parseInt(params.get("school") as string) || 100,
     );
@@ -63,88 +58,47 @@ function App() {
     const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false);
 
     useEffect(() => {
-        if (searchType === "score") {
-            setFilteredData(
-                sourceData.filter((v) => {
-                    const schoolPart = new Decimal(schoolScore).div(2);
-                    const quduratPart = new Decimal(quduratScore).div(2);
-                    const total = schoolPart.plus(quduratPart).times(4.1);
-                    return Decimal(v.الدرجة) <= total;
-                }),
-            );
-        } else if (searchType === "name") {
-            setFilteredData(
-                sourceData.filter((v) => {
-                    if (collegeName === "") {
-                        return parseFloat(v.الدرجة) <= limit;
-                    } else {
-                        return (
-                            v.الكلية.includes(collegeName) &&
-                            parseFloat(v.الدرجة) <= limit
-                        );
-                    }
-                }),
-            );
-        }
-        setTaggedData(
-            filteredData.filter((v) => {
-                if (tags.length === 0) return true;
-                return tags.includes(v.المجال);
+        setFinalData(
+            FilterData(sourceData, {
+                gender,
+                setGender,
+                year,
+                setYear,
+                sourceData,
+                setSourceData,
+                finalData,
+                setFinalData,
+                schoolScore,
+                setSchoolScore,
+                quduratScore,
+                setQuduratScore,
+                collegeName,
+                setCollegeName,
+                limit,
+                setLimit,
+                searchType,
+                setSearchType,
+                tags,
+                setTags,
+                types,
+                setTypes,
+                darkMode,
+                setDarkMode,
+                isOptionsOpen,
+                setIsOptionsOpen,
             }),
         );
-        setTaggedData(
-            filteredData.filter((v) => {
-                if (types.length === 0) return true;
-                return types.includes(v.النوع);
-            }),
-        );
-        document.querySelector("html")!.dataset.theme =
-            params.get("gender") || "boys";
-    }, []);
-    useEffect(() => {
-        if (searchType === "score") {
-            setFilteredData(
-                sourceData.filter((v) => {
-                    const schoolPart = new Decimal(schoolScore).div(2);
-                    const quduratPart = new Decimal(quduratScore).div(2);
-                    const total = schoolPart.plus(quduratPart).times(4.1);
-                    return Decimal(v.الدرجة) <= total;
-                }),
-            );
-        }
-    }, [schoolScore, quduratScore, searchType, sourceData]);
-    useEffect(() => {
-        if (searchType === "name") {
-            setFilteredData(
-                sourceData.filter((v) => {
-                    if (collegeName === "") {
-                        return parseFloat(v.الدرجة) <= limit;
-                    } else {
-                        return (
-                            v.الكلية.includes(collegeName) &&
-                            parseFloat(v.الدرجة) <= limit
-                        );
-                    }
-                }),
-            );
-        }
-    }, [collegeName, limit, searchType, sourceData]);
-    useEffect(() => {
-        setTaggedData(
-            filteredData.filter((v) => {
-                if (tags.length === 0) return true;
-                return tags.includes(v.المجال);
-            }),
-        );
-    }, [tags, filteredData]);
-    useEffect(() => {
-        setTaggedData(
-            filteredData.filter((v) => {
-                if (types.length === 0) return true;
-                return types.includes(v.النوع);
-            }),
-        );
-    }, [types, filteredData]);
+    }, [
+        schoolScore,
+        quduratScore,
+        collegeName,
+        limit,
+        searchType,
+        tags,
+        types,
+        sourceData,
+    ]);
+
     useEffect(() => {
         document.documentElement.dataset.themeMode = darkMode
             ? "dark"
@@ -226,8 +180,8 @@ function App() {
                 setYear,
                 sourceData,
                 setSourceData,
-                filteredData,
-                setFilteredData,
+                finalData,
+                setFinalData,
                 schoolScore,
                 setSchoolScore,
                 quduratScore,
@@ -242,8 +196,6 @@ function App() {
                 setTags,
                 types,
                 setTypes,
-                taggedData,
-                setTaggedData,
                 darkMode,
                 setDarkMode,
                 isOptionsOpen,

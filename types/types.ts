@@ -19,10 +19,8 @@ export type Context = {
     setYear: React.Dispatch<React.SetStateAction<Year>>;
     sourceData: College[];
     setSourceData: React.Dispatch<React.SetStateAction<College[]>>;
-    filteredData: College[];
-    setFilteredData: React.Dispatch<React.SetStateAction<College[]>>;
-    taggedData: College[];
-    setTaggedData: React.Dispatch<React.SetStateAction<College[]>>;
+    finalData: College[];
+    setFinalData: React.Dispatch<React.SetStateAction<College[]>>;
     schoolScore: number;
     setSchoolScore: React.Dispatch<React.SetStateAction<number>>;
     quduratScore: number;

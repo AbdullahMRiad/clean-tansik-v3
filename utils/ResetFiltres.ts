@@ -13,8 +13,6 @@ function ResetFilters(context: Context) {
         setLimit,
         setSearchType,
         setSourceData,
-        setFilteredData,
-        setTaggedData,
     } = context;
 
     const reset = window.confirm(
@@ -32,8 +30,6 @@ function ResetFilters(context: Context) {
         setLimit(410);
         setSearchType("score");
         setSourceData(_2025b as College[]);
-        setFilteredData(_2025b as College[]);
-        setTaggedData(_2025b as College[]);
         document.querySelector("html")!.dataset.theme = "boys";
         (document.getElementById("school-score") as HTMLInputElement).value =
             "100";

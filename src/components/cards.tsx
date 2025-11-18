@@ -5,7 +5,7 @@ export default function CardsContainer() {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to DataSelector is null");
-    const data = ctx.taggedData;
+    const data = ctx.finalData;
 
     const [isScrolled, setIsScrolled] = useState(false);
     useEffect(() => {
