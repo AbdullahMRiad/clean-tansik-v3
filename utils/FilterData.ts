@@ -1,7 +1,10 @@
 import Decimal from "decimal.js";
 import type { College, Context } from "../types/types";
 
-function FilterData(data: College[], context: Context): College[] {
+export default function FilterData(
+    data: College[],
+    context: Context,
+): College[] {
     let filteredData = data;
     if (context.searchType === "name") {
         filteredData = data.filter((college) => {
