@@ -5,23 +5,26 @@ function StatsSection() {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to StatsSection is null");
-    const { sourceData, filteredData, taggedData } = ctx;
+    const { stats } = ctx;
 
     return (
         <div id="stats-section" className="panel grid grid-cols-2 grid-rows-2">
-            <Stat name="إجمالي الكليات" value={sourceData.length.toString()} />
+            <Stat
+                name="إجمالي الكليات"
+                value={stats.totalColleges.toString()}
+            />
             <Stat
                 name="الكليات بعد التصفية"
-                value={taggedData.length.toString()}
+                value={stats.filteredColleges.toString()}
             />
             <Stat
                 name="الكليات المتاحة"
-                value={filteredData.length.toString()}
+                value={stats.availableColleges.toString()}
                 state="success"
             />
             <Stat
                 name="الكليات الغير متاحة"
-                value={(sourceData.length - filteredData.length).toString()}
+                value={stats.unavailableColleges.toString()}
                 state="fail"
             />
         </div>

@@ -5,6 +5,7 @@ import type {
     Context,
     Gender,
     SearchType,
+    Stats,
     Year,
 } from "../types/types";
 
@@ -13,6 +14,7 @@ import ModifiersContainer from "./components/modifiers";
 
 import _2025b from "../data/json/2025b.json";
 import FilterData from "../utils/FilterData";
+import CalculateStats from "../utils/CalculateStats";
 
 export const AppContext = createContext<Context>(null!);
 
@@ -56,7 +58,12 @@ function App() {
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
     });
     const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false);
-
+    const [stats, setStats] = useState<Stats>({
+        totalColleges: 0,
+        filteredColleges: 0,
+        availableColleges: 0,
+        unavailableColleges: 0,
+    });
     useEffect(() => {
         setFinalData(
             FilterData(sourceData, {
@@ -86,6 +93,8 @@ function App() {
                 setDarkMode,
                 isOptionsOpen,
                 setIsOptionsOpen,
+                stats,
+                setStats,
             }),
         );
     }, [
@@ -98,6 +107,41 @@ function App() {
         types,
         sourceData,
     ]);
+
+    useEffect(() => {
+        setStats(
+            CalculateStats(sourceData, {
+                gender,
+                setGender,
+                year,
+                setYear,
+                sourceData,
+                setSourceData,
+                finalData,
+                setFinalData,
+                schoolScore,
+                setSchoolScore,
+                quduratScore,
+                setQuduratScore,
+                collegeName,
+                setCollegeName,
+                limit,
+                setLimit,
+                searchType,
+                setSearchType,
+                tags,
+                setTags,
+                types,
+                setTypes,
+                darkMode,
+                setDarkMode,
+                isOptionsOpen,
+                setIsOptionsOpen,
+                stats,
+                setStats,
+            }),
+        );
+    }, [finalData]);
 
     useEffect(() => {
         document.documentElement.dataset.themeMode = darkMode
@@ -200,6 +244,8 @@ function App() {
                 setDarkMode,
                 isOptionsOpen,
                 setIsOptionsOpen,
+                stats,
+                setStats,
             }}>
             <div className="flex h-screen w-full flex-col gap-2 p-2 md:flex-row">
                 <ModifiersContainer />

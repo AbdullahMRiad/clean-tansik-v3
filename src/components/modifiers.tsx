@@ -47,7 +47,7 @@ function ModifiersContainer() {
             <DataSelector />
             <FiltersSection />
             <TagsSection />
-            {/* <StatsSection /> */}
+            <StatsSection />
             {window.matchMedia("(min-width: 768px)").matches && (
                 <button
                     className={`button material-symbols-outlined sticky bottom-2 mr-auto ml-1 aspect-square w-fit! p-2! transition-all ${isScrolled ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}

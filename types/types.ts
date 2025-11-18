@@ -12,6 +12,13 @@ export type Gender = "boys" | "girls";
 
 export type Year = 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025;
 
+export type Stats = {
+    totalColleges: number;
+    filteredColleges: number;
+    availableColleges: number;
+    unavailableColleges: number;
+};
+
 export type Context = {
     gender: Gender;
     setGender: React.Dispatch<React.SetStateAction<Gender>>;
@@ -39,4 +46,6 @@ export type Context = {
     setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
     isOptionsOpen: boolean;
     setIsOptionsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    stats: Stats;
+    setStats: React.Dispatch<React.SetStateAction<Stats>>;
 };
