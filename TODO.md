@@ -1,3 +1,1 @@
-- [x] Add copy link to filters
-- [x] Add reset filters
-- [x] Add scroll to top and to results
+- [ ] Fix card display bug when results are too few
