@@ -39,7 +39,7 @@ function ModifiersContainer() {
             <TagsSection />
             <StatsSection />
             <button
-                className={`button material-symbols-outlined sticky bottom-2 left-1/2 z-30 hidden! aspect-square w-12! p-2 leading-none transition-all md:block! ${isScrolled ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                className={`material-symbols-outlined button fixed right-4 bottom-4 z-30 hidden! min-h-12 w-12 items-center p-2 transition-all md:block! ${isScrolled ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
                 onClick={() =>
                     document
                         .getElementById("modifiers")

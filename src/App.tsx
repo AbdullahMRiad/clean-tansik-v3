@@ -251,7 +251,7 @@ function App() {
                 <ModifiersContainer />
                 <CardsContainer />
                 <button
-                    className={`button material-symbols-outlined fixed bottom-2 left-2 aspect-square w-fit! p-2! transition-all ${isScrolled ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                    className={`button material-symbols-outlined fixed bottom-2 left-1/2 block! h-12! w-12! -translate-x-1/2 p-2! transition-all md:hidden! ${isScrolled ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
                     onClick={() => {
                         document.scrollingElement?.scrollTo({
                             top: 0,
@@ -262,7 +262,7 @@ function App() {
                     vertical_align_top
                 </button>
                 <button
-                    className={`button material-symbols-outlined fixed bottom-2 left-1/2 aspect-square w-fit! -translate-x-1/2 p-2! transition-all ${!isSkipped ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                    className={`button material-symbols-outlined fixed bottom-2 left-1/2 block! h-12! w-12! -translate-x-1/2 p-2! transition-all md:hidden! ${!isSkipped ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
                     onClick={() => {
                         document.scrollingElement?.scrollTo({
                             top: Math.floor(

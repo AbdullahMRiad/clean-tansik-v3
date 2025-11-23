@@ -69,7 +69,7 @@ export default function CardsContainer() {
                     ))}
                     {window.matchMedia("(min-width: 768px)").matches && (
                         <button
-                            className={`button material-symbols-outlined sticky bottom-2 mr-auto ml-1 aspect-square w-fit! p-2! ${isScrolled ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                            className={`button material-symbols-outlined fixed bottom-4 left-4 h-12! w-12! p-2! ${isScrolled ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
                             onClick={() =>
                                 document
                                     .getElementById("cards-container")
