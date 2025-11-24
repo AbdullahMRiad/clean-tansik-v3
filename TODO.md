@@ -1,1 +1,2 @@
-- [ ] Fix card display bug when results are too few
+- [x] Fix card display bug when results are too few
+- [ ] Dynamically change tag list according to data
