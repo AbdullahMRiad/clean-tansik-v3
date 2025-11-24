@@ -107,7 +107,7 @@ function Card({
     icon: string;
 }) {
     return (
-        <div className="card panel">
+        <div className="card panel max-h-min">
             <span className="flex flex-row">
                 <span className="material-symbols-outlined ml-2">{icon}</span>
                 <span>{name}</span>
