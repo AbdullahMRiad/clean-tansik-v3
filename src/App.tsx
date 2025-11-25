@@ -64,39 +64,39 @@ function App() {
         availableColleges: 0,
         unavailableColleges: 0,
     });
+
+    const ctx = {
+        gender,
+        setGender,
+        year,
+        setYear,
+        sourceData,
+        setSourceData,
+        finalData,
+        setFinalData,
+        schoolScore,
+        setSchoolScore,
+        quduratScore,
+        setQuduratScore,
+        collegeName,
+        setCollegeName,
+        limit,
+        setLimit,
+        searchType,
+        setSearchType,
+        tags,
+        setTags,
+        types,
+        setTypes,
+        darkMode,
+        setDarkMode,
+        isOptionsOpen,
+        setIsOptionsOpen,
+        stats,
+        setStats,
+    };
     useEffect(() => {
-        setFinalData(
-            FilterData(sourceData, {
-                gender,
-                setGender,
-                year,
-                setYear,
-                sourceData,
-                setSourceData,
-                finalData,
-                setFinalData,
-                schoolScore,
-                setSchoolScore,
-                quduratScore,
-                setQuduratScore,
-                collegeName,
-                setCollegeName,
-                limit,
-                setLimit,
-                searchType,
-                setSearchType,
-                tags,
-                setTags,
-                types,
-                setTypes,
-                darkMode,
-                setDarkMode,
-                isOptionsOpen,
-                setIsOptionsOpen,
-                stats,
-                setStats,
-            }),
-        );
+        setFinalData(FilterData(sourceData, ctx));
     }, [
         schoolScore,
         quduratScore,
@@ -109,38 +109,7 @@ function App() {
     ]);
 
     useEffect(() => {
-        setStats(
-            CalculateStats(sourceData, {
-                gender,
-                setGender,
-                year,
-                setYear,
-                sourceData,
-                setSourceData,
-                finalData,
-                setFinalData,
-                schoolScore,
-                setSchoolScore,
-                quduratScore,
-                setQuduratScore,
-                collegeName,
-                setCollegeName,
-                limit,
-                setLimit,
-                searchType,
-                setSearchType,
-                tags,
-                setTags,
-                types,
-                setTypes,
-                darkMode,
-                setDarkMode,
-                isOptionsOpen,
-                setIsOptionsOpen,
-                stats,
-                setStats,
-            }),
-        );
+        setStats(CalculateStats(sourceData, ctx));
     }, [finalData]);
 
     useEffect(() => {
@@ -216,37 +185,7 @@ function App() {
     }, []);
 
     return (
-        <AppContext.Provider
-            value={{
-                gender,
-                setGender,
-                year,
-                setYear,
-                sourceData,
-                setSourceData,
-                finalData,
-                setFinalData,
-                schoolScore,
-                setSchoolScore,
-                quduratScore,
-                setQuduratScore,
-                collegeName,
-                setCollegeName,
-                limit,
-                setLimit,
-                searchType,
-                setSearchType,
-                tags,
-                setTags,
-                types,
-                setTypes,
-                darkMode,
-                setDarkMode,
-                isOptionsOpen,
-                setIsOptionsOpen,
-                stats,
-                setStats,
-            }}>
+        <AppContext.Provider value={ctx}>
             <div className="flex h-screen w-full flex-col gap-2 p-2 md:flex-row">
                 <ModifiersContainer />
                 <CardsContainer />
