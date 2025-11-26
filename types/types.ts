@@ -42,6 +42,10 @@ export type Context = {
     setTags: React.Dispatch<React.SetStateAction<string[]>>;
     types: string[];
     setTypes: React.Dispatch<React.SetStateAction<string[]>>;
+    availableTags: string[];
+    setAvailableTags: React.Dispatch<React.SetStateAction<string[]>>;
+    availableTypes: string[];
+    setAvailableTypes: React.Dispatch<React.SetStateAction<string[]>>;
     darkMode: boolean;
     setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
     isOptionsOpen: boolean;

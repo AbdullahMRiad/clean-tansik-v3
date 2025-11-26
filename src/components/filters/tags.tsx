@@ -5,7 +5,8 @@ function TagsSection() {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to DataSelector is null");
-    const { tags, setTags, types, setTypes } = ctx;
+    const { tags, setTags, types, setTypes, availableTags, availableTypes } =
+        ctx;
 
     const majors: { [key: string]: string } = {
         طب: "ecg",
@@ -50,12 +51,12 @@ function TagsSection() {
         "غير مصنف": "block",
     };
 
-    const typesArr: string[] = ["جامعة", "معهد", "انتساب"];
+    // const typesArr: string[] = ["جامعة", "معهد", "انتساب"];
     return (
         <div id="tags-section" className="panel flex flex-col">
             <span>المجال:</span>
             <div className="inline-flex flex-wrap gap-1.5">
-                {Object.keys(majors).map((v, i) => (
+                {availableTags.map((v, i) => (
                     <Tag
                         key={i}
                         text={v}
@@ -72,7 +73,7 @@ function TagsSection() {
             </div>
             <span className="mt-2">النوع:</span>
             <div className="inline-flex flex-wrap gap-1.5">
-                {typesArr.map((v, i) => (
+                {availableTypes.map((v, i) => (
                     <Tag
                         key={i}
                         text={v}

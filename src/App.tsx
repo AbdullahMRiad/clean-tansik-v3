@@ -13,8 +13,11 @@ import CardsContainer from "./components/cards";
 import ModifiersContainer from "./components/modifiers";
 
 import _2025b from "../data/json/2025b.json";
+
 import FilterData from "../utils/FilterData";
 import CalculateStats from "../utils/CalculateStats";
+import GetAvailableTags from "../utils/GetAvailableTags";
+import GetAvailableTypes from "../utils/GetAvailableTypes";
 
 export const AppContext = createContext<Context>(null!);
 
@@ -52,6 +55,8 @@ function App() {
     const [types, setTypes] = useState<string[]>(
         params.get("types")?.split(",") || [],
     );
+    const [availableTags, setAvailableTags] = useState<string[]>([]);
+    const [availableTypes, setAvailableTypes] = useState<string[]>([]);
     const [darkMode, setDarkMode] = useState<boolean>(() => {
         const saved = localStorage.getItem("darkMode");
         if (saved !== null) return saved === "true";
@@ -88,6 +93,10 @@ function App() {
         setTags,
         types,
         setTypes,
+        availableTags,
+        setAvailableTags,
+        availableTypes,
+        setAvailableTypes,
         darkMode,
         setDarkMode,
         isOptionsOpen,
@@ -95,6 +104,12 @@ function App() {
         stats,
         setStats,
     };
+
+    useEffect(() => {
+        setAvailableTags(GetAvailableTags(ctx));
+        setAvailableTypes(GetAvailableTypes(ctx));
+    }, [sourceData]);
+
     useEffect(() => {
         setFinalData(FilterData(sourceData, ctx));
     }, [
