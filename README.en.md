@@ -29,9 +29,7 @@ A simple website to view the Egyptian university admission limits for the Saudi 
 - Instant search across all colleges by name or limit
 - Ability to filter results based on school score and Saudi GAT score
 - Ability to filter results based on majors and type
-- Simple and responsive design for all devices\*
-
-\* Only phones are supported for now
+- Simple and responsive design for all devices
 
 ---
 
