@@ -1,34 +1,17 @@
 import { useContext } from "react";
 import { AppContext } from "../../App";
 
-function NameSearch({ hidden = false }: { hidden?: boolean }) {
+function NameSearch() {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to NameSearch is null");
     const { setCollegeName, setLimit, limit, collegeName } = ctx;
     return (
-        <div
-            id="score-search"
-            className={"m-1 flex flex-col p-1" + (hidden ? " hidden" : "")}>
+        <div id="score-search" className="flex flex-col">
             <div id="inputs-container" className="w-full">
                 <div className="m-1">
-                    <label htmlFor="college-name" className="text-center">
-                        <span>اسم الكلية</span>
-                    </label>
-                    <input
-                        id="college-name"
-                        placeholder="اسم الكلية"
-                        type="text"
-                        className="h-12 w-full"
-                        defaultValue={collegeName}
-                        onChange={(e) => {
-                            setCollegeName(e.target.value);
-                        }}
-                    />
-                </div>
-                <div className="m-1">
                     <label htmlFor="minimum-score" className="text-center">
-                        <span>الحد الأدنى</span>
+                        <span>الدرجة بعد المعادلة</span>
                     </label>
                     <input
                         id="minimum-score"
@@ -41,6 +24,21 @@ function NameSearch({ hidden = false }: { hidden?: boolean }) {
                         className="h-12 w-full"
                         onChange={(e) => {
                             setLimit(e.target.valueAsNumber || 410);
+                        }}
+                    />
+                </div>
+                <div className="m-1">
+                    <label htmlFor="college-name" className="text-center">
+                        <span>اسم الكلية</span>
+                    </label>
+                    <input
+                        id="college-name"
+                        placeholder="اسم الكلية"
+                        type="text"
+                        className="h-12 w-full"
+                        defaultValue={collegeName}
+                        onChange={(e) => {
+                            setCollegeName(e.target.value);
                         }}
                     />
                 </div>

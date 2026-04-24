@@ -1,20 +1,12 @@
-import Decimal from "decimal.js";
 import { useContext } from "react";
 import { AppContext } from "../../App";
 
-function ScoreSearch({ hidden = false }: { hidden?: boolean }) {
+function ScoreSearch() {
     const { quduratScore, setQuduratScore, schoolScore, setSchoolScore } =
         useContext(AppContext);
 
-    const message = `يتم حساب الدرجة عن طريق هذه المعادلة:
-
-((درجة\xa0المدرسة\xa0÷\xa0٢)\xa0+\xa0(درجة\xa0القدرات\xa0÷\xa0٢))\xa0×\xa0٤,١
-`;
-
     return (
-        <div
-            id="score-search"
-            className={"m-1 flex flex-col p-1" + (hidden ? " hidden" : "")}>
+        <div id="score-search" className="flex flex-col">
             <div id="inputs-container" className="flex w-full flex-row">
                 <div className="m-1 flex w-1/2 flex-col justify-center">
                     <label htmlFor="school-score" className="text-center">
@@ -53,19 +45,6 @@ function ScoreSearch({ hidden = false }: { hidden?: boolean }) {
                     />
                 </div>
             </div>
-            <span className="mt-2 w-full text-center">
-                الدرجة بعد المعادلة:{" "}
-                <span
-                    id="calculated-score"
-                    className="cursor-pointer border-b-2 border-dotted border-black dark:border-white"
-                    onClick={() => alert(message)}>
-                    {new Decimal(schoolScore)
-                        .div(2)
-                        .plus(new Decimal(quduratScore).div(2))
-                        .times(4.1)
-                        .toString()}
-                </span>
-            </span>
         </div>
     );
 }
