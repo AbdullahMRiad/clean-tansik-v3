@@ -1,9 +1,15 @@
 import { useContext } from "react";
 import { AppContext } from "../../App";
+import Decimal from "decimal.js";
 
 function ScoreSearch() {
-    const { quduratScore, setQuduratScore, schoolScore, setSchoolScore } =
-        useContext(AppContext);
+    const {
+        quduratScore,
+        setQuduratScore,
+        schoolScore,
+        setSchoolScore,
+        setLimit,
+    } = useContext(AppContext);
 
     return (
         <div id="score-search" className="flex flex-col">
@@ -20,10 +26,19 @@ function ScoreSearch() {
                         max="100"
                         step="0.01"
                         className="h-12 w-full"
-                        defaultValue={schoolScore}
-                        onChange={(e) =>
-                            setSchoolScore(e.target.valueAsNumber || 0)
-                        }
+                        value={schoolScore}
+                        onChange={(e) => {
+                            const val = Math.min(
+                                Math.max(e.target.valueAsNumber, 0),
+                                100,
+                            );
+                            setSchoolScore(val);
+                            const limit = new Decimal(val)
+                                .add(quduratScore)
+                                .dividedBy(2)
+                                .mul(4.1);
+                            setLimit(limit.toNumber());
+                        }}
                     />
                 </div>
                 <div className="m-1 flex w-1/2 flex-col justify-center">
@@ -38,10 +53,19 @@ function ScoreSearch() {
                         max="100"
                         step="1"
                         className="h-12 w-full"
-                        defaultValue={quduratScore}
-                        onChange={(e) =>
-                            setQuduratScore(e.target.valueAsNumber || 0)
-                        }
+                        value={quduratScore}
+                        onChange={(e) => {
+                            const val = Math.min(
+                                Math.max(e.target.valueAsNumber, 0),
+                                100,
+                            );
+                            setQuduratScore(val);
+                            const limit = new Decimal(val)
+                                .add(schoolScore)
+                                .dividedBy(2)
+                                .mul(4.1);
+                            setLimit(limit.toNumber());
+                        }}
                     />
                 </div>
             </div>

@@ -1,11 +1,19 @@
 import { useContext } from "react";
 import { AppContext } from "../../App";
+import Decimal from "decimal.js";
 
 function NameSearch() {
     const ctx = useContext(AppContext);
     if (!ctx)
         throw new Error("ContextError: Context passed to NameSearch is null");
-    const { setCollegeName, setLimit, limit, collegeName } = ctx;
+    const {
+        setCollegeName,
+        setLimit,
+        limit,
+        collegeName,
+        setSchoolScore,
+        setQuduratScore,
+    } = ctx;
     return (
         <div id="score-search" className="flex flex-col">
             <div id="inputs-container" className="w-full">
@@ -20,10 +28,28 @@ function NameSearch() {
                         min="0"
                         max="410"
                         step="0.000001"
-                        defaultValue={limit}
+                        value={limit}
                         className="h-12 w-full"
                         onChange={(e) => {
-                            setLimit(e.target.valueAsNumber || 410);
+                            const val = Math.min(
+                                Math.max(e.target.valueAsNumber, 0),
+                                410,
+                            );
+                            setLimit(val);
+                            if (val >= 205) {
+                                setSchoolScore(100);
+                                const qud = new Decimal(val)
+                                    .dividedBy(4.1)
+                                    .sub(50)
+                                    .mul(2);
+                                setQuduratScore(qud.toDP(6).toNumber());
+                            } else {
+                                setQuduratScore(0);
+                                const sch = new Decimal(val)
+                                    .dividedBy(4.1)
+                                    .mul(2);
+                                setSchoolScore(sch.toDP(6).toNumber());
+                            }
                         }}
                     />
                 </div>
