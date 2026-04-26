@@ -22,6 +22,7 @@ function NameSearch() {
                         <span>الدرجة بعد المعادلة</span>
                     </label>
                     <input
+                        dir="ltr"
                         id="minimum-score"
                         placeholder="درجة من 0 إلى 410"
                         type="number"

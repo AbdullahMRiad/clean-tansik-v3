@@ -19,6 +19,7 @@ function ScoreSearch() {
                         <span>درجة المدرسة</span>
                     </label>
                     <input
+                        dir="ltr"
                         id="school-score"
                         placeholder="درجة من 0 إلى 100"
                         type="number"
@@ -46,6 +47,7 @@ function ScoreSearch() {
                         <span>درجة القدرات</span>
                     </label>
                     <input
+                        dir="ltr"
                         id="qudurat-score"
                         placeholder="درجة من 0 إلى 100"
                         type="number"
