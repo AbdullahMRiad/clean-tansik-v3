@@ -6,8 +6,6 @@ export type College = {
     النوع: "جامعة" | "معهد" | "انتساب" | "غير مصنف";
 };
 
-export type SearchType = "name" | "score";
-
 export type Gender = "boys" | "girls";
 
 export type Year = 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025;
@@ -36,8 +34,6 @@ export type Context = {
     setCollegeName: React.Dispatch<React.SetStateAction<string>>;
     limit: number;
     setLimit: React.Dispatch<React.SetStateAction<number>>;
-    searchType: SearchType;
-    setSearchType: React.Dispatch<React.SetStateAction<SearchType>>;
     tags: string[];
     setTags: React.Dispatch<React.SetStateAction<string[]>>;
     types: string[];

@@ -1,13 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-import type {
-    College,
-    Context,
-    Gender,
-    SearchType,
-    Stats,
-    Year,
-} from "../types/types";
+import type { College, Context, Gender, Stats, Year } from "../types/types";
 
 import CardsContainer from "./components/cards";
 import ModifiersContainer from "./components/modifiers";
@@ -45,9 +38,6 @@ function App() {
     );
     const [limit, setLimit] = useState<number>(
         parseInt(params.get("limit") as string) || 410,
-    );
-    const [searchType, setSearchType] = useState<SearchType>(
-        (params.get("search") as SearchType) || "score",
     );
     const [tags, setTags] = useState<string[]>(
         params.get("tags")?.split(",") || [],
@@ -87,8 +77,6 @@ function App() {
         setCollegeName,
         limit,
         setLimit,
-        searchType,
-        setSearchType,
         tags,
         setTags,
         types,
@@ -117,7 +105,6 @@ function App() {
         quduratScore,
         collegeName,
         limit,
-        searchType,
         tags,
         types,
         sourceData,

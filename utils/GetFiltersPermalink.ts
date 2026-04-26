@@ -10,18 +10,14 @@ function GetFiltersPermalink(context: Context): string {
         quduratScore,
         collegeName,
         limit,
-        searchType,
     } = context;
     const params: string[] = [];
     if (gender) params.push(`gender=${gender}`);
     if (year) params.push(`year=${year}`);
-    if (searchType === "name") {
-        if (collegeName) params.push(`college=${collegeName}`);
-        if (limit) params.push(`limit=${limit}`);
-    } else {
-        if (schoolScore) params.push(`school=${schoolScore}`);
-        if (quduratScore) params.push(`qudurat=${quduratScore}`);
-    }
+    if (collegeName) params.push(`college=${collegeName}`);
+    if (limit) params.push(`limit=${limit}`);
+    if (schoolScore) params.push(`school=${schoolScore}`);
+    if (quduratScore) params.push(`qudurat=${quduratScore}`);
     if (tags.length > 0) params.push(`tags=${tags.join(",")}`);
     if (types.length > 0) params.push(`types=${types.join(",")}`);
     if (params.length > 0) {

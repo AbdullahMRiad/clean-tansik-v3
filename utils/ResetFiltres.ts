@@ -11,7 +11,6 @@ function ResetFilters(context: Context) {
         setQuduratScore,
         setCollegeName,
         setLimit,
-        setSearchType,
         setSourceData,
     } = context;
 
@@ -28,7 +27,6 @@ function ResetFilters(context: Context) {
         setQuduratScore(100);
         setCollegeName("");
         setLimit(410);
-        setSearchType("score");
         setSourceData(_2025b as College[]);
         document.querySelector("html")!.dataset.theme = "boys";
         (document.getElementById("school-score") as HTMLInputElement).value =
