@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../../App";
 
 function TagsSection() {
@@ -7,6 +7,9 @@ function TagsSection() {
         throw new Error("ContextError: Context passed to DataSelector is null");
     const { tags, setTags, types, setTypes, availableTags, availableTypes } =
         ctx;
+
+    const [isMajorsOpen, setIsMajorsOpen] = useState<boolean>(false);
+    const [isTypesOpen, setIsTypesOpen] = useState<boolean>(false);
 
     const majors: { [key: string]: string } = {
         طب: "ecg",
@@ -53,9 +56,19 @@ function TagsSection() {
 
     // const typesArr: string[] = ["جامعة", "معهد", "انتساب"];
     return (
-        <div id="tags-section" className="panel flex flex-col">
-            <span>المجال:</span>
-            <div className="inline-flex flex-wrap gap-1.5">
+        <div id="tags-section" className="panel flex flex-col gap-1">
+            <button
+                className="button flex flex-row gap-1 px-2 py-1"
+                onClick={() => setIsMajorsOpen(!isMajorsOpen)}>
+                <span>المجال</span>
+                <i
+                    className={`material-symbols-outlined transition-transform duration-200 ease-in-out ${isMajorsOpen ? "rotate-0" : "rotate-90"}`}>
+                    arrow_drop_down
+                </i>
+            </button>
+            <div
+                className={`grid transition-[grid-template-rows] duration-200 ease-in-out ${isMajorsOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]"}`}>
+                <div className="grid min-h-0 grid-cols-2 gap-1 overflow-hidden">
                 {availableTags.map((v, i) => (
                     <Tag
                         key={i}
@@ -70,9 +83,20 @@ function TagsSection() {
                         }}
                         checked={tags.includes(v)}></Tag>
                 ))}
+                </div>
             </div>
-            <span className="mt-2">النوع:</span>
-            <div className="inline-flex flex-wrap gap-1.5">
+            <button
+                className="button mt-0 flex flex-row gap-1 px-2 py-1"
+                onClick={() => setIsTypesOpen(!isTypesOpen)}>
+                <span>النوع</span>
+                <i
+                    className={`material-symbols-outlined transition-transform duration-200 ease-in-out ${isTypesOpen ? "rotate-0" : "rotate-90"}`}>
+                    arrow_drop_down
+                </i>
+            </button>
+            <div
+                className={`grid transition-[grid-template-rows] duration-200 ease-in-out ${isTypesOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]"}`}>
+                <div className="grid min-h-0 grid-cols-3 gap-1 overflow-hidden">
                 {availableTypes.map((v, i) => (
                     <Tag
                         key={i}
