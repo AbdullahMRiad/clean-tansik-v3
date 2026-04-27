@@ -69,20 +69,21 @@ function TagsSection() {
             <div
                 className={`grid transition-[grid-template-rows] duration-200 ease-in-out ${isMajorsOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]"}`}>
                 <div className="grid min-h-0 grid-cols-2 gap-1 overflow-hidden">
-                {availableTags.map((v, i) => (
-                    <Tag
-                        key={i}
-                        text={v}
-                        icon={majors[v]}
-                        handleClick={() => {
-                            if (tags.includes(v)) {
-                                setTags(tags.filter((t) => t !== v));
-                            } else {
-                                setTags([...tags, v]);
-                            }
-                        }}
-                        checked={tags.includes(v)}></Tag>
-                ))}
+                    {availableTags.map((v, i) => (
+                        <Tag
+                            key={i}
+                            text={v}
+                            icon={majors[v]}
+                            handleClick={() => {
+                                if (tags.includes(v)) {
+                                    setTags(tags.filter((t) => t !== v));
+                                } else {
+                                    setTags([...tags, v]);
+                                }
+                            }}
+                            checked={tags.includes(v)}
+                            centered={false}></Tag>
+                    ))}
                 </div>
             </div>
             <button
@@ -97,19 +98,21 @@ function TagsSection() {
             <div
                 className={`grid transition-[grid-template-rows] duration-200 ease-in-out ${isTypesOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]"}`}>
                 <div className="grid min-h-0 grid-cols-3 gap-1 overflow-hidden">
-                {availableTypes.map((v, i) => (
-                    <Tag
-                        key={i}
-                        text={v}
-                        handleClick={() => {
-                            if (types.includes(v)) {
-                                setTypes(types.filter((t) => t !== v));
-                            } else {
-                                setTypes([...types, v]);
-                            }
-                        }}
-                        checked={types.includes(v)}></Tag>
-                ))}
+                    {availableTypes.map((v, i) => (
+                        <Tag
+                            key={i}
+                            text={v}
+                            handleClick={() => {
+                                if (types.includes(v)) {
+                                    setTypes(types.filter((t) => t !== v));
+                                } else {
+                                    setTypes([...types, v]);
+                                }
+                            }}
+                            checked={types.includes(v)}
+                            centered={true}></Tag>
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -120,25 +123,32 @@ function Tag({
     icon,
     handleClick,
     checked,
+    centered,
 }: {
     text: string;
     icon?: string;
     handleClick: () => void;
     checked: boolean;
+    centered: boolean;
 }) {
     return (
         <button
             className={
-                "button my-0.5 flex flex-row items-center px-2 py-1" +
+                "button flex flex-row items-center gap-1 px-2 py-1" +
                 (checked ? " checked-tag" : "")
             }
             onClick={() => {
                 handleClick();
             }}>
-            <i className={icon ? "material-symbols-outlined ml-1" : "hidden"}>
+            <i
+                className={
+                    icon
+                        ? "material-symbols-outlined max-[350px]:hidden!"
+                        : "hidden"
+                }>
                 {icon}
             </i>
-            {text}
+            <span className={centered ? "mx-auto" : ""}>{text}</span>
         </button>
     );
 }
