@@ -31,7 +31,7 @@ function ModifiersContainer() {
     return (
         <div
             id="modifiers"
-            className="scroll-container flex flex-col gap-2 rounded-2xl md:h-full md:max-w-sm md:overflow-y-scroll">
+            className="scroll-container flex flex-col gap-2 rounded-2xl md:h-full md:max-w-lg md:min-w-[300px] md:resize-x md:overflow-y-scroll">
             <Header />
             <OptionsPanel />
             <DataSelector />
