@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
+import { TipToggler, Tip } from "./toggletip";
 
 export default function CardsContainer() {
     const ctx = useContext(AppContext);
@@ -91,6 +92,7 @@ export default function CardsContainer() {
                     <span className="text-2xl font-bold">لا توجد نتائج</span>
                 </>
             )}
+            <Tip info="يشير هذا المربع إلى الحد الأدنى لدرجة القدرات بافتراض الدرجة النهائية في المدرسة"/>
         </div>
     );
 }
@@ -120,17 +122,8 @@ function Card({
                     </span>
                 </div>
                 <div className="girls:dark:border-stone-700 girls:bg-red-100 girls:dark:bg-transparent m-1 flex w-1/2 flex-col rounded-2xl bg-blue-100 p-1 dark:border-2 dark:border-slate-700 dark:bg-transparent">
-                    <span className="inline-flex justify-center text-center align-middle">
-                        <span>درجة القدرات</span>
-                        <span
-                            className="material-symbols-outlined mr-1 cursor-pointer border-b-2 border-dotted border-b-black text-[18px]! text-black dark:border-b-white dark:text-white"
-                            onClick={() =>
-                                alert(
-                                    "يشير هذا المربع إلى الحد الأدنى لدرجة القدرات بافتراض الدرجة النهائية في المدرسة",
-                                )
-                            }>
-                            info
-                        </span>
+                    <span className="text-center">
+                        <TipToggler>درجة القدرات</TipToggler>
                     </span>
                     <span className="text-center text-2xl font-bold">
                         {quduratScore}
