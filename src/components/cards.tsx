@@ -92,7 +92,7 @@ export default function CardsContainer() {
                     <span className="text-2xl font-bold">لا توجد نتائج</span>
                 </>
             )}
-            <Tip info="يشير هذا المربع إلى الحد الأدنى لدرجة القدرات بافتراض الدرجة النهائية في المدرسة"/>
+            <Tip info="يشير هذا المربع إلى الحد الأدنى لدرجة القدرات بافتراض الدرجة النهائية في المدرسة" />
         </div>
     );
 }
@@ -115,13 +115,13 @@ function Card({
                 <span>{name}</span>
             </span>
             <div className="flex w-full flex-row" /* scores container */>
-                <div className="girls:dark:border-stone-700 girls:bg-red-100 girls:dark:bg-transparent m-1 flex w-1/2 flex-col rounded-2xl bg-blue-100 p-1 dark:border-2 dark:border-slate-700 dark:bg-transparent">
+                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-mist-100 p-1 dark:border-2 dark:border-mist-700 dark:bg-transparent">
                     <span className="text-center">الحد الأدنى</span>
                     <span className="text-center text-2xl font-bold">
                         {limit}
                     </span>
                 </div>
-                <div className="girls:dark:border-stone-700 girls:bg-red-100 girls:dark:bg-transparent m-1 flex w-1/2 flex-col rounded-2xl bg-blue-100 p-1 dark:border-2 dark:border-slate-700 dark:bg-transparent">
+                <div className="m-1 flex w-1/2 flex-col rounded-2xl bg-mist-100 p-1 dark:border-2 dark:border-mist-700 dark:bg-transparent">
                     <span className="text-center">
                         <TipToggler>درجة القدرات</TipToggler>
                     </span>

@@ -44,10 +44,10 @@ function Stat({
 
     if (state === "fail") {
         style =
-            " border-red-400! dark:border-red-900! bg-red-100! dark:bg-red-950!";
+            " border-2 border-red-400! dark:border-red-900! bg-red-100! dark:bg-red-950!";
     } else if (state === "success") {
         style =
-            " border-green-400! dark:border-green-900! bg-green-100! dark:bg-green-950!";
+            " border-2 border-green-400! dark:border-green-900! bg-green-100! dark:bg-green-950!";
     } else {
         style = "";
     }
@@ -55,7 +55,7 @@ function Stat({
     return (
         <div
             className={
-                "girls:bg-red-100 girls:dark:border-stone-700 girls:dark:bg-transparent m-1 flex flex-col rounded-2xl bg-blue-100 p-1 dark:border-2 dark:border-slate-700 dark:bg-transparent" +
+                "m-1 flex flex-col rounded-2xl bg-mist-100 p-1 dark:border-2 dark:border-mist-700 dark:bg-transparent" +
                 style
             }>
             <span className="text-center">{name}</span>
