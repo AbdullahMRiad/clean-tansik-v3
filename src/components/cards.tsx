@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../App";
 import { TipToggler, Tip } from "./toggletip";
 
@@ -7,40 +7,6 @@ export default function CardsContainer() {
     if (!ctx)
         throw new Error("ContextError: Context passed to DataSelector is null");
     const data = ctx.finalData;
-
-    const [isScrolled, setIsScrolled] = useState(false);
-    useEffect(() => {
-        const mediaQuery = window.matchMedia("(min-width: 768px)");
-        let observer: IntersectionObserver | null = null;
-
-        const setupObserver = () => {
-            if (!mediaQuery.matches) {
-                observer?.disconnect();
-                observer = null;
-                setIsScrolled(false);
-                return;
-            }
-
-            observer = new IntersectionObserver(
-                (e) => setIsScrolled(!e[0].isIntersecting),
-                {
-                    threshold: 0,
-                    root: document.getElementById("cards-container"),
-                },
-            );
-
-            const target = document.getElementsByClassName("card")[1];
-            if (target) observer.observe(target);
-        };
-
-        setupObserver();
-        mediaQuery.addEventListener("change", setupObserver);
-
-        return () => {
-            mediaQuery.removeEventListener("change", setupObserver);
-            observer?.disconnect();
-        };
-    }, []);
 
     return (
         <div
@@ -68,9 +34,8 @@ export default function CardsContainer() {
                             key={i}
                         />
                     ))}
-                    {window.matchMedia("(min-width: 768px)").matches && (
-                        <button
-                            className={`button material-symbols-outlined fixed bottom-4 left-4 h-12! w-12! p-2! ${isScrolled ? "translate-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                    <button
+                            className="button material-symbols-outlined fixed bottom-2 left-2 p-3!"
                             onClick={() =>
                                 document
                                     .getElementById("cards-container")
@@ -81,8 +46,7 @@ export default function CardsContainer() {
                                     })
                             }>
                             vertical_align_top
-                        </button>
-                    )}
+                    </button>
                 </>
             ) : (
                 <>
