@@ -27,7 +27,7 @@
     @apply p-1;
 
     &:has(input:checked) {
-        @apply bg-mist-400 font-bold text-white dark:bg-mist-600;
+        @apply bg-mist-400 text-white dark:bg-mist-600;
 
         &:active {
             @apply scale-98 bg-mist-500 dark:bg-[oklch(from_var(--color-mist-800)_calc(l-0.03)_c_h)];
