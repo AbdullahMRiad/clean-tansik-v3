@@ -11,6 +11,7 @@ import FilterData from "../utils/FilterData";
 import CalculateStats from "../utils/CalculateStats";
 import GetAvailableTags from "../utils/GetAvailableTags";
 import GetAvailableTypes from "../utils/GetAvailableTypes";
+import GetFiltersPermalink from "../utils/GetFiltersPermalink";
 
 export const AppContext = createContext<Context>(null!);
 
@@ -120,6 +121,20 @@ function App() {
             : "light";
         localStorage.setItem("darkMode", darkMode.toString());
     }, [darkMode]);
+
+    useEffect(() => {
+        const url = GetFiltersPermalink(ctx);
+        window.history.replaceState({}, document.title, url)
+    }, [
+        gender,
+        year,
+        tags,
+        types,
+        schoolScore,
+        quduratScore,
+        collegeName,
+        limit
+    ])
 
     return (
         <AppContext.Provider value={ctx}>
