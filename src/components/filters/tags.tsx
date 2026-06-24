@@ -57,18 +57,17 @@ function TagsSection() {
     // const typesArr: string[] = ["جامعة", "معهد", "انتساب"];
     return (
         <div id="tags-section" className="panel flex flex-col gap-1">
-            <button
-                className="button flex flex-row gap-1 px-2 py-1"
-                onClick={() => setIsMajorsOpen(!isMajorsOpen)}>
-                <span>المجال</span>
-                <i
-                    className={`material-symbols-outlined transition-transform duration-200 ease-in-out ${isMajorsOpen ? "rotate-0" : "rotate-90"}`}>
-                    arrow_drop_down
-                </i>
-            </button>
-            <div
-                className={`grid transition-[grid-template-rows] duration-200 ease-in-out ${isMajorsOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]"}`}>
-                <div className="grid min-h-0 grid-cols-2 gap-1 overflow-hidden">
+            <details className="[interpolate-size:allow-keywords] details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto">
+                <summary
+                    className="button flex flex-row gap-1 px-2 py-1"
+                    onClick={() => setIsMajorsOpen(!isMajorsOpen)}>
+                    <span>المجال</span>
+                    <i
+                        className={`material-symbols-outlined transition-transform duration-200 ease-in-out ${isMajorsOpen ? "rotate-0" : "rotate-90"}`}>
+                        arrow_drop_down
+                    </i>
+                </summary>
+                <div className="mt-1 grid grid-cols-2 gap-1">
                     {availableTags.map((v, i) => (
                         <Tag
                             key={i}
@@ -85,19 +84,18 @@ function TagsSection() {
                             centered={false}></Tag>
                     ))}
                 </div>
-            </div>
-            <button
-                className="button mt-0 flex flex-row gap-1 px-2 py-1"
-                onClick={() => setIsTypesOpen(!isTypesOpen)}>
-                <span>النوع</span>
-                <i
-                    className={`material-symbols-outlined transition-transform duration-200 ease-in-out ${isTypesOpen ? "rotate-0" : "rotate-90"}`}>
-                    arrow_drop_down
-                </i>
-            </button>
-            <div
-                className={`grid transition-[grid-template-rows] duration-200 ease-in-out ${isTypesOpen ? "[grid-template-rows:1fr]" : "[grid-template-rows:0fr]"}`}>
-                <div className="grid min-h-0 grid-cols-3 gap-1 overflow-hidden">
+            </details>
+            <details className="[interpolate-size:allow-keywords] details-content:h-0 details-content:overflow-clip details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto">
+                <summary
+                    className="button flex flex-row gap-1 px-2 py-1"
+                    onClick={() => setIsTypesOpen(!isTypesOpen)}>
+                    <span>النوع</span>
+                    <i
+                        className={`material-symbols-outlined transition-transform duration-200 ease-in-out ${isTypesOpen ? "rotate-0" : "rotate-90"}`}>
+                        arrow_drop_down
+                    </i>
+                </summary>
+                <div className="mt-1 grid grid-cols-3 gap-1">
                     {availableTypes.map((v, i) => (
                         <Tag
                             key={i}
@@ -113,7 +111,7 @@ function TagsSection() {
                             centered={true}></Tag>
                     ))}
                 </div>
-            </div>
+            </details>
         </div>
     );
 }
