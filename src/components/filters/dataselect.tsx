@@ -100,8 +100,6 @@ function DataSelector() {
                         checked={gender === "boys"}
                         onChange={(e) => {
                             setGender(e.target.value as Gender);
-                            document.querySelector("html")!.dataset.theme =
-                                e.target.value;
                         }}
                     />
                 </label>
@@ -118,8 +116,6 @@ function DataSelector() {
                         checked={gender === "girls"}
                         onChange={(e) => {
                             setGender(e.target.value as Gender);
-                            document.querySelector("html")!.dataset.theme = e
-                                .target.value as Gender;
                         }}
                     />
                 </label>
