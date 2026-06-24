@@ -83,9 +83,13 @@ function DataSelector() {
     }, [year, gender, setSourceData]);
 
     return (
-        <div id="dataselector-container" className="panel">
-            <div id="gender-selector" className="flex w-full">
-                <label htmlFor="boys" className="radio-selector button flex">
+        <div
+            id="dataselector-container"
+            className="panel grid grid-cols-1 gap-1">
+            <div id="gender-selector" className="grid w-full grid-cols-2 gap-1">
+                <label
+                    htmlFor="boys"
+                    className="radio-selector button flex grow">
                     <span className="mx-auto self-center">بنين</span>
                     <input
                         type="radio"
@@ -101,7 +105,9 @@ function DataSelector() {
                         }}
                     />
                 </label>
-                <label htmlFor="girls" className="radio-selector button flex">
+                <label
+                    htmlFor="girls"
+                    className="radio-selector button flex grow">
                     <span className="mx-auto self-center">بنات</span>
                     <input
                         type="radio"
@@ -118,25 +124,25 @@ function DataSelector() {
                     />
                 </label>
             </div>
-            <div id="year-selector" className="flex justify-center">
+            <div id="year-selector" className="flex justify-between">
                 <button
-                    className="button material-symbols-outlined h-12 w-12"
+                    className="button material-symbols-outlined p-1 px-4"
                     onClick={() => {
                         if (year < 2025) {
                             setYear((year + 1) as Year);
                         }
                     }}>
-                    keyboard_arrow_up
+                    add
                 </button>
-                <span className="mx-8 h-min self-center text-lg">{year}</span>
+                <span className="h-min self-center text-lg">{year}</span>
                 <button
-                    className="button material-symbols-outlined h-12 w-12"
+                    className="button material-symbols-outlined p-1 px-4"
                     onClick={() => {
                         if (year > 2019) {
                             setYear((year - 1) as Year);
                         }
                     }}>
-                    keyboard_arrow_down
+                    remove
                 </button>
             </div>
         </div>

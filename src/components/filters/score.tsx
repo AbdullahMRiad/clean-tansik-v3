@@ -12,9 +12,11 @@ function ScoreSearch() {
     } = useContext(AppContext);
 
     return (
-        <div id="score-search" className="flex flex-col">
-            <div id="inputs-container" className="flex w-full flex-row">
-                <div className="m-1 flex w-1/2 flex-col justify-center">
+        <div className="flex flex-col">
+            <div
+                id="inputs-container"
+                className="grid w-full grid-cols-2 gap-1">
+                <div className="flex flex-col justify-center">
                     <label htmlFor="school-score" className="text-center">
                         <span>درجة المدرسة</span>
                     </label>
@@ -42,7 +44,7 @@ function ScoreSearch() {
                         }}
                     />
                 </div>
-                <div className="m-1 flex w-1/2 flex-col justify-center">
+                <div className="flex flex-col justify-center">
                     <label htmlFor="qudurat-score" className="text-center">
                         <span>درجة القدرات</span>
                     </label>

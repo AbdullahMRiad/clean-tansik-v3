@@ -15,9 +15,11 @@ function NameSearch() {
         setQuduratScore,
     } = ctx;
     return (
-        <div id="score-search" className="flex flex-col">
-            <div id="inputs-container" className="w-full">
-                <div className="m-1">
+        <div className="flex flex-col">
+            <div
+                id="inputs-container"
+                className="grid w-full grid-cols-1 gap-1">
+                <div>
                     <label htmlFor="minimum-score" className="text-center">
                         <span>الدرجة بعد المعادلة</span>
                     </label>
@@ -54,7 +56,7 @@ function NameSearch() {
                         }}
                     />
                 </div>
-                <div className="m-1">
+                <div>
                     <label htmlFor="college-name" className="text-center">
                         <span>اسم الكلية</span>
                     </label>

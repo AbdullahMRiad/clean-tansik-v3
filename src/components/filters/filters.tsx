@@ -11,7 +11,7 @@ function FiltersSection() {
         );
 
     return (
-        <div id="filters-section" className="panel m-1 p-1">
+        <div id="filters-section" className="panel grid grid-cols-1 gap-1">
             <ScoreSearch />
             <NameSearch />
         </div>

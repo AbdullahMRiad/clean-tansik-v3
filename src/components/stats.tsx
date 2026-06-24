@@ -8,7 +8,7 @@ function StatsSection() {
     const { stats } = ctx;
 
     return (
-        <div id="stats-section" className="panel grid grid-cols-2 grid-rows-2">
+        <div id="stats-section" className="panel grid grid-cols-2 gap-1">
             <Stat
                 name="إجمالي الكليات"
                 value={stats.totalColleges.toString()}
@@ -55,7 +55,7 @@ function Stat({
     return (
         <div
             className={
-                "m-1 flex flex-col rounded-2xl bg-mist-100 p-1 dark:border-2 dark:border-mist-700 dark:bg-transparent" +
+                "flex flex-col rounded-2xl bg-mist-100 p-1 dark:border-2 dark:border-mist-700 dark:bg-transparent" +
                 style
             }>
             <span className="text-center">{name}</span>

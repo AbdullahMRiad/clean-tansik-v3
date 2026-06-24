@@ -8,7 +8,7 @@
 @custom-variant dark (&:where([data-theme-mode=dark], [data-theme-mode=dark] *));
 
 .panel {
-    @apply rounded-2xl bg-mist-200 p-1.5 dark:bg-mist-800;
+    @apply rounded-2xl bg-mist-200 p-2 dark:bg-mist-800;
 }
 
 .button {
@@ -24,10 +24,10 @@
 }
 
 .radio-selector {
-    @apply m-3 h-12 w-2/5 p-1;
+    @apply p-1;
 
     &:has(input:checked) {
-        @apply w-3/5 bg-mist-400 font-bold text-white dark:bg-mist-600;
+        @apply bg-mist-400 font-bold text-white dark:bg-mist-600;
 
         &:active {
             @apply scale-98 bg-mist-500 dark:bg-[oklch(from_var(--color-mist-800)_calc(l-0.03)_c_h)];
