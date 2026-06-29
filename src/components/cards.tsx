@@ -82,7 +82,7 @@ function Card({
                 className="grid w-full grid-cols-2 gap-1" /* scores container */
             >
                 <div className="flex flex-col rounded-2xl bg-mist-100 p-1 dark:border-2 dark:border-mist-700 dark:bg-transparent">
-                    <span className="text-center">الحد الأدنى</span>
+                    <span className="text-center">الدرجة بعد المعادلة</span>
                     <span className="text-center text-2xl font-bold">
                         {limit}
                     </span>
