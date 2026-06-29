@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 import GetFiltersPermalink from "../../utils/GetFiltersPermalink";
-import ResetFilters from "../../utils/ResetFiltres";
+import ResetFilters from "../../utils/ResetFilters";
 
 function OptionsPanel() {
     const ctx = useContext(AppContext);

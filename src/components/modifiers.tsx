@@ -5,7 +5,7 @@ import StatsSection from "./stats";
 import Header from "./header";
 import OptionsPanel from "./options";
 import { useContext } from "react";
-import ResetFilters from "../../utils/ResetFiltres";
+import ResetFilters from "../../utils/ResetFilters";
 import { AppContext } from "../App";
 
 function ModifiersContainer() {
