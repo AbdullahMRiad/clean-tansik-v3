@@ -127,7 +127,8 @@ function DataSelector() {
                         if (year < 2025) {
                             setYear((year + 1) as Year);
                         }
-                    }}>
+                    }}
+                    disabled={year === 2025}>
                     add
                 </button>
                 <span className="h-min self-center text-lg">{year}</span>
@@ -137,7 +138,8 @@ function DataSelector() {
                         if (year > 2019) {
                             setYear((year - 1) as Year);
                         }
-                    }}>
+                    }}
+                    disabled={year === 2019}>
                     remove
                 </button>
             </div>

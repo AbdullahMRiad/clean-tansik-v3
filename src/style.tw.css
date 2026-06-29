@@ -14,13 +14,17 @@
 .button {
     @apply rounded-2xl bg-mist-300 text-center text-black transition-all dark:bg-mist-700 dark:text-white;
 
-    &:hover {
+    &:hover:not(:disabled) {
         @apply bg-mist-400 text-white dark:bg-mist-600;
     }
 
-    &:active {
+    &:active:not(:disabled) {
         @apply scale-98 bg-mist-500 dark:bg-[oklch(from_var(--color-mist-800)_calc(l-0.03)_c_h)];
     }
+}
+
+.button:disabled {
+    @apply opacity-30;
 }
 
 .radio-selector {
