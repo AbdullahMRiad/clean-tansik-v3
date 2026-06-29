@@ -19,7 +19,7 @@ function OptionsPanel() {
             closedby="any"
             className="m-auto bg-transparent text-black dark:text-white"
             onClose={() => setIsOptionsOpen(false)}>
-            <div className="panel flex h-48 w-64 flex-row justify-between gap-2">
+            <div className="panel flex w-64 flex-row justify-between gap-2">
                 <div className="flex grow flex-col gap-2">
                     <button
                         className="button material-symbols-outlined h-8 w-8"
