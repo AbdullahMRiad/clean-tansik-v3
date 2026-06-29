@@ -4,29 +4,13 @@ import TagsSection from "./filters/tags";
 import StatsSection from "./stats";
 import Header from "./header";
 import OptionsPanel from "./options";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import ResetFilters from "../../utils/ResetFiltres";
+import { AppContext } from "../App";
 
 function ModifiersContainer() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    useEffect(() => {
-        let observer: IntersectionObserver | null = null;
-
-        const setupObserver = () => {
-            observer = new IntersectionObserver(
-                (e) => setIsScrolled(!e[0].isIntersecting),
-                { threshold: 0, root: document.getElementById("modifiers") },
-            );
-
-            const target = document.getElementById("dataselector-container");
-            if (target) observer.observe(target);
-        };
-
-        setupObserver();
-
-        return () => {
-            observer?.disconnect();
-        };
-    }, []);
+    const ctx = useContext(AppContext);
+    if (!ctx) throw new Error("ContextError: Context passed to Header is null");
 
     return (
         <div
@@ -39,13 +23,12 @@ function ModifiersContainer() {
             <TagsSection />
             <StatsSection />
             <button
-                className={`material-symbols-outlined button fixed right-4 bottom-4 z-30 hidden! min-h-12 w-12 items-center p-2 transition-all md:block! ${isScrolled ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
-                onClick={() =>
-                    document
-                        .getElementById("modifiers")
-                        ?.scrollTo({ top: 0, left: 0, behavior: "smooth" })
-                }>
-                vertical_align_top
+                className="button inline-flex w-full items-center justify-center gap-1 p-1"
+                onClick={() => {
+                    ResetFilters(ctx);
+                }}>
+                <i className="material-symbols-outlined">refresh</i> إعادة ضبط
+                إعدادات التصفية
             </button>
         </div>
     );
