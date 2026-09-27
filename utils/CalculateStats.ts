@@ -8,9 +8,7 @@ export default function CalculateStats(
     const totalColleges = data.length;
 
     // Calculate available colleges
-    let availableColleges;
-
-    availableColleges = data.filter((v) => {
+    const availableColleges = data.filter((v) => {
         return parseFloat(v.الدرجة) <= context.limit;
     });
 
