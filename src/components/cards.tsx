@@ -16,7 +16,7 @@ export default function CardsContainer() {
             className={
                 data.length === 0
                     ? "scroll-container flex w-full flex-col items-center justify-center rounded-2xl md:h-full"
-                    : "scroll-container relative grid w-full grid-cols-1 gap-2 rounded-2xl md:h-full md:overflow-y-scroll lg:grid-cols-2"
+                    : "scroll-container relative grid w-full grid-cols-1 gap-2 rounded-2xl md:h-full md:overflow-y-scroll lg:grid-cols-2 auto-rows-min"
             }>
             {data.length > 0 ? (
                 <>
