@@ -8,8 +8,8 @@
 
 موقع يوضح الحدود الدنيا لقبول الطلاب المصريين القادمين من المملكة العربية السعودية في الجامعات المصرية
 
-🔗 **الرابط المباشر للموقع**: [tansik.pages.dev](https://tansik.pages.dev/)\
-🔗 **رابط النسخة التجريبية للموقع:** [dev.tansik.pages.dev](https://dev.tansik.pages.dev/)
+🔗 **الرابط المباشر للموقع**: [tansik.abdullahmriad.dev](https://tansik.abdullahmriad.dev/)\
+🔗 **رابط النسخة التجريبية للموقع:** [dev.tansik.abdullahmriad.dev](https://dev.tansik.abdullahmriad.dev/)
 
 ---
 

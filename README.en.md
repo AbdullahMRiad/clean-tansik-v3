@@ -8,8 +8,8 @@ A full rewrite of [AbdullahMRiad/clean-tansik-v2](https://www.github.com/Abdulla
 
 A simple website to view the Egyptian university admission limits for the Saudi high school certificate in the years 2019-2025, separated by boys data and girls data. It supports quick search and filtering by school grade and Saudi GAT score or by college name and limit.
 
-🔗 **Live site:** [tansik.pages.dev](https://tansik.pages.dev)\
-🔗 **Testing site:** [dev.tansik.pages.dev](https://dev.tansik.pages.dev/)
+🔗 **Live site:** [tansik.abdullahmriad.dev](https://tansik.abdullahmriad.dev)\
+🔗 **Testing site:** [dev.tansik.abdullahmriad.dev](https://dev.tansik.abdullahmriad.dev/)
 
 ---
 
