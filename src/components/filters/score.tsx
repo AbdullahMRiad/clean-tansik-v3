@@ -21,7 +21,7 @@ function ScoreSearch() {
         setLimit(limit.toNumber());
     }
 
-    useEffect(() => {calculateConvertedScore()}, [year]);
+    useEffect(() => {calculateConvertedScore()}, [year, schoolScore, quduratScore]);
 
     return (
         <div className="flex flex-col">
@@ -48,7 +48,6 @@ function ScoreSearch() {
                                 100,
                             );
                             setSchoolScore(val);
-                            calculateConvertedScore();
                         }}
                     />
                 </div>
@@ -72,7 +71,6 @@ function ScoreSearch() {
                                 100,
                             );
                             setQuduratScore(val);
-                            calculateConvertedScore();
                         }}
                     />
                 </div>
