@@ -13,7 +13,9 @@ function NameSearch() {
         collegeName,
         setSchoolScore,
         setQuduratScore,
+        year
     } = ctx;
+    const factor = year === 2026 ? 3.2 : 4.1
     return (
         <div className="flex flex-col">
             <div
@@ -26,30 +28,30 @@ function NameSearch() {
                     <input
                         dir="ltr"
                         id="minimum-score"
-                        placeholder="درجة من 0 إلى 410"
+                        placeholder={"درجة من 0 إلى " + (year === 2026 ? "320" : "410")}
                         type="number"
                         min="0"
-                        max="410"
+                        max={year === 2026 ? "320" : "410"}
                         step="0.000001"
                         value={limit}
                         className="h-12 w-full"
                         onChange={(e) => {
                             const val = Math.min(
                                 Math.max(e.target.valueAsNumber, 0),
-                                410,
+                                year === 2026 ? 320 : 410,
                             );
                             setLimit(val);
-                            if (val >= 205) {
+                            if (val >= (year === 2026 ? 160 : 205)) {
                                 setSchoolScore(100);
                                 const qud = new Decimal(val)
-                                    .dividedBy(4.1)
+                                    .dividedBy(factor)
                                     .sub(50)
                                     .mul(2);
                                 setQuduratScore(qud.toDP(6).toNumber());
                             } else {
                                 setQuduratScore(0);
                                 const sch = new Decimal(val)
-                                    .dividedBy(4.1)
+                                    .dividedBy(factor)
                                     .mul(2);
                                 setSchoolScore(sch.toDP(6).toNumber());
                             }

@@ -8,7 +8,7 @@ export type College = {
 
 export type Gender = "boys" | "girls";
 
-export type Year = 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025;
+export type Year = 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026;
 
 export type Stats = {
     totalColleges: number;

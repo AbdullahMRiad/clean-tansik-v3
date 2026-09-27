@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../../App";
 import Decimal from "decimal.js";
 
@@ -9,7 +9,19 @@ function ScoreSearch() {
         schoolScore,
         setSchoolScore,
         setLimit,
+        year,
     } = useContext(AppContext);
+    const factor = year === 2026 ? 3.2 : 4.1;
+
+    function calculateConvertedScore() {
+        const limit = new Decimal(schoolScore)
+            .add(quduratScore)
+            .dividedBy(2)
+            .mul(factor);
+        setLimit(limit.toNumber());
+    }
+
+    useEffect(() => {calculateConvertedScore()}, [year]);
 
     return (
         <div className="flex flex-col">
@@ -36,11 +48,7 @@ function ScoreSearch() {
                                 100,
                             );
                             setSchoolScore(val);
-                            const limit = new Decimal(val)
-                                .add(quduratScore)
-                                .dividedBy(2)
-                                .mul(4.1);
-                            setLimit(limit.toNumber());
+                            calculateConvertedScore();
                         }}
                     />
                 </div>
@@ -64,11 +72,7 @@ function ScoreSearch() {
                                 100,
                             );
                             setQuduratScore(val);
-                            const limit = new Decimal(val)
-                                .add(schoolScore)
-                                .dividedBy(2)
-                                .mul(4.1);
-                            setLimit(limit.toNumber());
+                            calculateConvertedScore();
                         }}
                     />
                 </div>

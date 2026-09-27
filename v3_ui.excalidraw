@@ -1,7 +1,7 @@
 {
   "type": "excalidraw",
   "version": 2,
-  "source": "https://excalidraw.com",
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
   "elements": [
     {
       "id": "_7hwbs49uGCRHk9AyhjuP",
@@ -1368,8 +1368,8 @@
       "type": "text",
       "x": -357.16162456407284,
       "y": -82.49852419870447,
-      "width": 52.22879601102731,
-      "height": 24.342226631767577,
+      "width": 52.64686584472656,
+      "height": 24.34222663176755,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -1383,20 +1383,20 @@
       "index": "aH",
       "roundness": null,
       "seed": 1495115738,
-      "version": 270,
-      "versionNonce": 1718809734,
+      "version": 275,
+      "versionNonce": 1635294312,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1758325438196,
+      "updated": 1790535060883,
       "link": null,
       "locked": false,
-      "text": "2025",
+      "text": "2026",
       "fontSize": 19.47378130541404,
       "fontFamily": 5,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "2025",
+      "originalText": "2026",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -14652,7 +14652,7 @@
       "version": 238,
       "versionNonce": 1900863840,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1758376697489,
       "link": null,
       "locked": false
@@ -14680,7 +14680,7 @@
       "version": 137,
       "versionNonce": 439188832,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1758376708245,
       "link": null,
       "locked": false,
@@ -15369,18 +15369,14 @@
         0
       ],
       "simulatePressure": false,
-      "lastCommittedPoint": [
-        -5.300097586376069,
-        14.454731394953853
-      ]
+      "lastCommittedPoint": null
     }
   ],
   "appState": {
     "gridSize": 20,
     "gridStep": 5,
     "gridModeEnabled": false,
-    "viewBackgroundColor": "#ffffff",
-    "lockedMultiSelections": {}
+    "viewBackgroundColor": "#ffffff"
   },
   "files": {}
 }

@@ -9,6 +9,7 @@ import _2022b from "../../../data/json/2022b.json";
 import _2023b from "../../../data/json/2023b.json";
 import _2024b from "../../../data/json/2024b.json";
 import _2025b from "../../../data/json/2025b.json";
+import _2026b from "../../../data/json/2026b.json";
 
 import _2019g from "../../../data/json/2019g.json";
 import _2020g from "../../../data/json/2020g.json";
@@ -17,6 +18,7 @@ import _2022g from "../../../data/json/2022g.json";
 import _2023g from "../../../data/json/2023g.json";
 import _2024g from "../../../data/json/2024g.json";
 import _2025g from "../../../data/json/2025g.json";
+import _2026g from "../../../data/json/2026g.json";
 
 function DataSelector() {
     const ctx = useContext(AppContext);
@@ -48,6 +50,9 @@ function DataSelector() {
                 case 2025:
                     setSourceData(_2025b as College[]);
                     break;
+                case 2026:
+                    setSourceData(_2026b as College[]);
+                    break;
                 default:
                     setSourceData([]);
                     break;
@@ -74,6 +79,9 @@ function DataSelector() {
                     break;
                 case 2025:
                     setSourceData(_2025g as College[]);
+                    break;
+                case 2026:
+                    setSourceData(_2026g as College[]);
                     break;
                 default:
                     setSourceData([]);
@@ -124,11 +132,11 @@ function DataSelector() {
                 <button
                     className="button material-symbols-outlined p-1 px-4"
                     onClick={() => {
-                        if (year < 2025) {
+                        if (year < 2026) {
                             setYear((year + 1) as Year);
                         }
                     }}
-                    disabled={year === 2025}>
+                    disabled={year === 2026}>
                     add
                 </button>
                 <span className="h-min self-center text-lg">{year}</span>

@@ -1,5 +1,5 @@
 import type { College, Context } from "../types/types";
-import _2025b from "../data/json/2025b.json";
+import _2026b from "../data/json/2026b.json";
 
 function ResetFilters(context: Context) {
     const {
@@ -12,6 +12,7 @@ function ResetFilters(context: Context) {
         setCollegeName,
         setLimit,
         setSourceData,
+        year
     } = context;
 
     const reset = window.confirm(
@@ -20,14 +21,14 @@ function ResetFilters(context: Context) {
 
     if (reset) {
         setGender("boys");
-        setYear(2025);
+        setYear(2026);
         setTags([]);
         setTypes([]);
         setSchoolScore(100);
         setQuduratScore(100);
         setCollegeName("");
-        setLimit(410);
-        setSourceData(_2025b as College[]);
+        setLimit(year === 2026 ? 320 : 410);
+        setSourceData(_2026b as College[]);
         document.querySelector("html")!.dataset.theme = "boys";
         (document.getElementById("school-score") as HTMLInputElement).value =
             "100";
@@ -36,7 +37,7 @@ function ResetFilters(context: Context) {
         (document.getElementById("college-name") as HTMLInputElement).value =
             "";
         (document.getElementById("minimum-score") as HTMLInputElement).value =
-            "410";
+            year === 2026 ? "320" : "410";
     }
 }
 

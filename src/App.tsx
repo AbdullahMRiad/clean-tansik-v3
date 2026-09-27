@@ -5,7 +5,7 @@ import type { College, Context, Gender, Stats, Year } from "../types/types";
 import CardsContainer from "./components/cards";
 import ModifiersContainer from "./components/modifiers";
 
-import _2025b from "../data/json/2025b.json";
+import _2026b from "../data/json/2026b.json";
 
 import FilterData from "../utils/FilterData";
 import CalculateStats from "../utils/CalculateStats";
@@ -22,12 +22,12 @@ function App() {
         (params.get("gender") as Gender) || "boys",
     );
     const [year, setYear] = useState<Year>(
-        (parseInt(params.get("year") as string) as Year) || 2025,
+        (parseInt(params.get("year") as string) as Year) || 2026,
     );
     const [sourceData, setSourceData] = useState<College[]>(
-        _2025b as College[],
+        _2026b as College[],
     );
-    const [finalData, setFinalData] = useState<College[]>(_2025b as College[]);
+    const [finalData, setFinalData] = useState<College[]>(_2026b as College[]);
     const [schoolScore, setSchoolScore] = useState<number>(
         parseInt(params.get("school") as string) || 100,
     );

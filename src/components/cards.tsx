@@ -7,6 +7,8 @@ export default function CardsContainer() {
     if (!ctx)
         throw new Error("ContextError: Context passed to DataSelector is null");
     const data = ctx.finalData;
+    const year = ctx.year
+    const factor = year === 2026 ? 3.2 : 4.1
 
     return (
         <div
@@ -26,7 +28,7 @@ export default function CardsContainer() {
                             quduratScore={Math.ceil(
                                 parseFloat(
                                     (
-                                        (2 * parseFloat(v.الدرجة)) / 4.1 -
+                                        (2 * parseFloat(v.الدرجة)) / factor -
                                         100
                                     ).toFixed(6),
                                 ),
